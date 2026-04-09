@@ -26,10 +26,10 @@ type recipeCardProps = {
 export default function RecipeCard({ meal }: recipeCardProps) {
   function calculateTime(time: number): string {
     if (time > 60) {
-      const duration = time / 60;
-      const durationArr = duration.toString().split(".");
+      const duration = Math.round(time / 60);
+      const minutes = time % 60;
 
-      return `${durationArr[0]} hours ${durationArr[1]} mins`;
+      return `${duration} hours ${minutes} mins`;
     } else return `${time} mins`;
   }
   return (
@@ -76,8 +76,12 @@ export default function RecipeCard({ meal }: recipeCardProps) {
           <div className="mb-6 pb-6 border-b border-gray-200">
             <p className="">
               Servings:{" "}
-              {Array.from(Array(meal.servings)).map((s) => {
-                return <span className="text-2xl">🍲 </span>;
+              {Array.from(Array(meal.servings)).map((s, i) => {
+                return (
+                  <span key={i + 1} className="text-2xl">
+                    🍲{" "}
+                  </span>
+                );
               })}
             </p>
             <p className="text-sm text-gray-600 ">

@@ -191,7 +191,7 @@ export default function RecipeDetails() {
               <RecipeDescriptionCard meal={mealRecipe} />
             </div>
           </div>
-          <Related />
+          <Related types={mealRecipe.dishTypes} recipeId={mealRecipe.id} />
         </div>
       ) : (
         <></>

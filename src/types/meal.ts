@@ -10,7 +10,6 @@ export type Meal = {
   glutenFree: boolean;
   cookingMinutes: number;
   aggregateLikes: number;
-
   veryHealthy: boolean;
   cheap: boolean;
 

@@ -19,26 +19,24 @@ export default function Home() {
   useEffect(() => {
     async function getdata() {
       const data = await getRecipes();
-      console.log({ data });
-      setTrending(data);
+      const ned = data.slice(1, 5);
+      setTrending(ned);
     }
     getdata();
   }, []);
 
   return (
     <div>
-      <div>
-        <div className="px-10 my-16 ">
-          <h1 className="text-5xl text-secondary heading-font font-bold">
-            Best trending now..
-          </h1>
-        </div>
-        <div className="bg-accent">
-          <div className="flex justify-around h-[70vh] ">
-            {trending.map((t, id) =>
-              id < 4 ? <RecipeCard key={t.id} index={id} meal={t} /> : <></>,
-            )}
-          </div>
+      <div className="px-10 my-16 ">
+        <h1 className="text-5xl text-secondary heading-font font-bold">
+          Best trending now..
+        </h1>
+      </div>
+      <div className="bg-accent">
+        <div className="flex justify-around h-[70vh] ">
+          {trending.map((t, index) => (
+            <RecipeCard key={index + 1} index={index} meal={t} />
+          ))}
         </div>
       </div>
     </div>

@@ -47,10 +47,12 @@ export default function RecipeCard({ meal, index }: recipeCardProps) {
         <p>{meal.summary}</p>
       </div>
       {cardVisible ? (
-        <RecipeOverviewModal
-          meal={meal}
-          handleClickOutside={handleCardVisibility}
-        />
+        <div>
+          <RecipeOverviewModal
+            meal={meal}
+            handleClickOutside={handleCardVisibility}
+          />
+        </div>
       ) : (
         <div></div>
       )}

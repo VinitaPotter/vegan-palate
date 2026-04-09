@@ -43,11 +43,11 @@ export default function RecipeOverviewModal({
         >
           <div className=" relative">
             <div className="h-64"></div>
-            <p className="text-3xl absolute top-46 left-6 p-6 text-bold text-shadow-2xl highlight-container">
+            <p className="text-3xl absolute top-46 left-6 p-6  text-bold text-shadow-2xl highlight-container">
               <span className="relative">{meal.title}</span>
             </p>
             <div className="p-4 h-2/3 min-h-96 mx-4">
-              <div className="mb-4 ">
+              <div className="mb-4 mt-4 ">
                 <p className="font-extrabold">Description</p>
                 <p>{meal.summary}</p>
               </div>
@@ -80,9 +80,12 @@ export default function RecipeOverviewModal({
               </div>
               <div className="mb-8">
                 <p className="font-medium text-lg mb-2">Recipe tags</p>
-                {meal.tags.map((tag) => {
+                {meal.tags.map((tag, index) => {
                   return (
-                    <span className="border border-gray-400 text-gray-500 px-2 py-1 mr-2 rounded-lg text-xs">
+                    <span
+                      key={index}
+                      className="border border-gray-400 text-gray-500 px-2 py-1 mr-2 rounded-lg text-xs"
+                    >
                       {tag}
                     </span>
                   );
