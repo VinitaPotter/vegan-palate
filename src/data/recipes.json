@@ -1,0 +1,661 @@
+[
+  {
+    "id": 501,
+    "title": "Vegan Mushroom Stroganoff",
+    "image": "https://minimalistbaker.com/wp-content/uploads/2021/09/CREAMY-Vegan-Mushroom-Stroganoff-SO-comforting-gluten-free-optional-and-just-10-ingredients-minimalistbaker-recipe-plantbased-stroganoff-mushrooms-pasta-5.jpg",
+    "servings": 4,
+    "readyInMinutes": 20,
+    "preparationMinutes": 5,
+    "glutenFree": false,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["main course", "dinner"],
+    "cookingMinutes": 15,
+    "aggregateLikes": 180,
+    "sourceName": "Minimalist Baker",
+    "sourceUrl": "https://minimalistbaker.com/creamy-vegan-mushroom-stroganoff/",
+    "weightPerServing": { "amount": 350, "unit": "g" },
+    "tags": ["vegan", "comfort food", "plant-based", "creamy"],
+    "summary": "Sauteed onions, mushrooms, and al dente pasta all tossed in a creamy vegan stroganoff sauce. A cozy, warming dish with a healthy twist!",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "olive oil",
+        "emoji": "🫒",
+        "amount": 2,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 2,
+        "name": "sweet or yellow onion",
+        "emoji": "🧅",
+        "amount": 1,
+        "unit": "medium",
+        "preparation": "diced"
+      },
+      {
+        "id": 3,
+        "name": "baby bella mushrooms",
+        "emoji": "🍄",
+        "amount": 16,
+        "unit": "oz",
+        "preparation": "sliced thin"
+      },
+      {
+        "id": 4,
+        "name": "vegetable broth",
+        "emoji": "🥣",
+        "amount": 1,
+        "unit": "cup",
+        "preparation": ""
+      },
+      {
+        "id": 5,
+        "name": "vegan sour cream",
+        "emoji": "🥛",
+        "amount": 8,
+        "unit": "oz",
+        "preparation": "or homemade cashew cream"
+      },
+      {
+        "id": 6,
+        "name": "nutritional yeast",
+        "emoji": "🧀",
+        "amount": 2,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 7,
+        "name": "lemon juice",
+        "emoji": "🍋",
+        "amount": 1.5,
+        "unit": "tbsp",
+        "preparation": "freshly squeezed"
+      },
+      {
+        "id": 8,
+        "name": "pasta",
+        "emoji": "🍝",
+        "amount": 10,
+        "unit": "oz",
+        "preparation": "fusilli or penne"
+      }
+    ],
+    "instructions": "Cook pasta until al dente. Sauté onion in oil, then add mushrooms and brown. Add broth and reduce. Stir in vegan sour cream, nutritional yeast, and lemon juice. Toss with pasta and serve.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Cook pasta according to package instructions. Drain and set aside."
+      },
+      {
+        "number": 2,
+        "step": "Heat 1 tbsp olive oil over medium heat in a large sauté pan. Add diced onion and sauté until translucent."
+      },
+      {
+        "number": 3,
+        "step": "Add remaining 1 tbsp olive oil and the sliced mushrooms to the pan. Cook until mushrooms are tender and browned."
+      },
+      {
+        "number": 4,
+        "step": "Pour in the vegetable broth and cook for 2-3 minutes until about half the liquid has evaporated."
+      },
+      {
+        "number": 5,
+        "step": "Stir in your vegan sour cream, nutritional yeast, and lemon juice until the sauce is completely smooth."
+      },
+      {
+        "number": 6,
+        "step": "Add the cooked pasta, season with salt and pepper to taste, stir until combined, and serve immediately."
+      }
+    ],
+    "nutrition": {
+      "calories": 420,
+      "protein": 14,
+      "carbs": 60,
+      "fat": 15,
+      "fiber": 7
+    },
+    "reviews": [
+      {
+        "user": "FungiFanatic_99",
+        "rating": 5,
+        "testimonial": "I served this to my carnivorous father-in-law and didn't tell him it was vegan until he asked for thirds. The cashew cream is a total game changer!"
+      },
+      {
+        "user": "TexturePolice_Officer",
+        "rating": 2,
+        "testimonial": "Flavor was spot on, but my mushrooms went slightly rubbery. I think I overcrowded the pan. User error? Maybe. Sad dinner? Definitely."
+      }
+    ]
+  },
+  {
+    "id": 502,
+    "title": "Avocado Toast Recipe",
+    "image": "https://cdn.loveandlemons.com/wp-content/uploads/2020/01/how-to-make-avocado-toast.jpg",
+    "servings": 2,
+    "readyInMinutes": 10,
+    "preparationMinutes": 10,
+    "glutenFree": false,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["breakfast", "snack"],
+    "cookingMinutes": 0,
+    "aggregateLikes": 95,
+    "sourceName": "Love and Lemons",
+    "sourceUrl": "https://www.loveandlemons.com/avocado-toast-recipe/",
+    "weightPerServing": { "amount": 150, "unit": "g" },
+    "tags": ["quick meal", "breakfast", "healthy fats", "vegan"],
+    "summary": "A super easy, healthy, and satisfying blank canvas for flavorful seasonal toppings.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "ripe avocado",
+        "emoji": "🥑",
+        "amount": 1,
+        "unit": "whole",
+        "preparation": "halved and pitted"
+      },
+      {
+        "id": 2,
+        "name": "lemon",
+        "emoji": "🍋",
+        "amount": 1,
+        "unit": "wedge",
+        "preparation": "for squeezing"
+      },
+      {
+        "id": 3,
+        "name": "sea salt",
+        "emoji": "🧂",
+        "amount": 1,
+        "unit": "pinch",
+        "preparation": ""
+      },
+      {
+        "id": 4,
+        "name": "bread",
+        "emoji": "🍞",
+        "amount": 2,
+        "unit": "slices",
+        "preparation": "thick, whole grain or sourdough, toasted"
+      }
+    ],
+    "instructions": "Toast bread. Halve and dice avocado, then scoop onto toast. Mash with a fork and season with lemon juice and sea salt.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Halve the avocado vertically and remove the pit."
+      },
+      {
+        "number": 2,
+        "step": "Use a small knife to dice the avocado flesh while it is still inside the skin."
+      },
+      {
+        "number": 3,
+        "step": "Scoop the diced avocado flesh out of the skin and directly onto the toasted bread slices."
+      },
+      {
+        "number": 4,
+        "step": "Mash the avocado with the back of a fork, intentionally leaving some texture."
+      },
+      {
+        "number": 5,
+        "step": "Season the flesh with a squeeze of fresh lemon juice and sprinkle generously with sea salt."
+      }
+    ],
+    "nutrition": {
+      "calories": 250,
+      "protein": 5,
+      "carbs": 25,
+      "fat": 15,
+      "fiber": 8
+    },
+    "reviews": [
+      {
+        "user": "Millennial_Bankruptcy_Expert",
+        "rating": 5,
+        "testimonial": "If this is the reason I can't afford a house, then I'll happily live in a tent with my perfectly seasoned sourdough. The lemon juice squeeze is non-negotiable."
+      },
+      {
+        "user": "OldSchool_Grandpa",
+        "rating": 1,
+        "testimonial": "It's literally just mush on bread. I tried to grill it and the avocado got warm and weird. Back in my day, we just used butter."
+      }
+    ]
+  },
+  {
+    "id": 503,
+    "title": "Lentil Ragu",
+    "image": "https://tastythriftytimely.com/wp-content/uploads/2022/01/Red-Lentil-Ragu-With-A-Kick-10-Simple-Ingredients-8.jpg",
+    "servings": 4,
+    "readyInMinutes": 90,
+    "preparationMinutes": 15,
+    "glutenFree": false,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["main course", "lunch"],
+    "cookingMinutes": 75,
+    "aggregateLikes": 210,
+    "sourceName": "BBC Good Food",
+    "sourceUrl": "https://www.bbcgoodfood.com/recipes/lentil-ragu",
+    "weightPerServing": { "amount": 550, "unit": "g" },
+    "tags": ["high protein", "freezable", "vegetarian", "healthy"],
+    "summary": "Struggle to get your five-a-day? This superhealthy lentil ragu will get you four steps closer and can be frozen for extra convenience.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "olive oil",
+        "emoji": "🫒",
+        "amount": 2,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 2,
+        "name": "onions",
+        "emoji": "🧅",
+        "amount": 3,
+        "unit": "medium",
+        "preparation": "finely chopped"
+      },
+      {
+        "id": 3,
+        "name": "carrots",
+        "emoji": "🥕",
+        "amount": 3,
+        "unit": "medium",
+        "preparation": "finely chopped"
+      },
+      {
+        "id": 4,
+        "name": "celery",
+        "emoji": "🥬",
+        "amount": 3,
+        "unit": "sticks",
+        "preparation": "finely chopped"
+      },
+      {
+        "id": 5,
+        "name": "garlic",
+        "emoji": "🧄",
+        "amount": 3,
+        "unit": "cloves",
+        "preparation": "crushed"
+      },
+      {
+        "id": 6,
+        "name": "dried red lentils",
+        "emoji": "🫘",
+        "amount": 500,
+        "unit": "g",
+        "preparation": ""
+      },
+      {
+        "id": 7,
+        "name": "chopped tomatoes",
+        "emoji": "🍅",
+        "amount": 800,
+        "unit": "g",
+        "preparation": "canned"
+      },
+      {
+        "id": 8,
+        "name": "vegetable stock",
+        "emoji": "🥣",
+        "amount": 1,
+        "unit": "l",
+        "preparation": ""
+      },
+      {
+        "id": 9,
+        "name": "spaghetti",
+        "emoji": "🍝",
+        "amount": 500,
+        "unit": "g",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Sauté onion, carrots, celery, and garlic. Stir in lentils, tomatoes, stock, and herbs. Simmer until lentils are tender. Serve over cooked spaghetti.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Heat the oil in a large saucepan and add the onions, carrots, celery and garlic. Cook gently for 15-20 mins until everything is softened."
+      },
+      {
+        "number": 2,
+        "step": "Stir in the lentils, chopped tomatoes, tomato purée, herbs and stock."
+      },
+      {
+        "number": 3,
+        "step": "Bring to a simmer, then cook for 40-50 mins until the lentils are tender and saucy – splash in water if you need."
+      },
+      {
+        "number": 4,
+        "step": "While the sauce cooks, boil the spaghetti following pack instructions."
+      },
+      {
+        "number": 5,
+        "step": "Drain well, divide between pasta bowls, and spoon the sauce over the top."
+      }
+    ],
+    "nutrition": {
+      "calories": 715,
+      "protein": 33,
+      "carbs": 120,
+      "fat": 6,
+      "fiber": 14
+    },
+    "reviews": [
+      {
+        "user": "MealPrep_Queen_B",
+        "rating": 5,
+        "testimonial": "This freezes beautifully! I made a double batch and now I have 8 portions of 'emergency happiness' in my freezer for work nights."
+      },
+      {
+        "user": "Hungry_Hiker_Dan",
+        "rating": 3,
+        "testimonial": "Decent fuel, but 90 minutes is a lifetime when you're starving. I ended up snacking on raw carrots while waiting for the lentils to soften. Plan ahead!"
+      }
+    ]
+  },
+  {
+    "id": 504,
+    "title": "Peanut Soba Noodle Slaw",
+    "image": "https://cookieandkate.com/images/2014/01/peanut-soba-noodles-slaw.jpg",
+    "servings": 4,
+    "readyInMinutes": 25,
+    "preparationMinutes": 20,
+    "glutenFree": false,
+    "veryHealthy": false,
+    "cheap": true,
+    "dishTypes": ["salad", "lunch"],
+    "cookingMinutes": 5,
+    "aggregateLikes": 140,
+    "sourceName": "Cookie and Kate",
+    "sourceUrl": "https://cookieandkate.com/peanut-soba-noodle-slaw-recipe/",
+    "weightPerServing": { "amount": 320, "unit": "g" },
+    "tags": ["healthy", "asian slaw", "vegan", "peanut"],
+    "summary": "Healthy Asian slaw made with cabbage, carrots and soba noodles, tossed in a bold peanut-sesame sauce.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "soba noodles",
+        "emoji": "🍜",
+        "amount": 6,
+        "unit": "oz",
+        "preparation": ""
+      },
+      {
+        "id": 2,
+        "name": "green cabbage",
+        "emoji": "🥬",
+        "amount": 4,
+        "unit": "cups",
+        "preparation": "shredded"
+      },
+      {
+        "id": 3,
+        "name": "carrots",
+        "emoji": "🥕",
+        "amount": 2,
+        "unit": "cups",
+        "preparation": "grated"
+      },
+      {
+        "id": 4,
+        "name": "peanut butter",
+        "emoji": "🥜",
+        "amount": 0.5,
+        "unit": "cup",
+        "preparation": ""
+      },
+      {
+        "id": 5,
+        "name": "rice vinegar",
+        "emoji": "🍶",
+        "amount": 3,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 6,
+        "name": "toasted sesame oil",
+        "emoji": "🛢️",
+        "amount": 3,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 7,
+        "name": "tamari",
+        "emoji": "🧂",
+        "amount": 3,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 8,
+        "name": "fresh ginger",
+        "emoji": "🫚",
+        "amount": 1,
+        "unit": "tbsp",
+        "preparation": "finely grated"
+      },
+      {
+        "id": 9,
+        "name": "garlic",
+        "emoji": "🧄",
+        "amount": 2,
+        "unit": "cloves",
+        "preparation": "minced"
+      }
+    ],
+    "instructions": "Shred vegetables. Cook and rinse soba noodles. Whisk together peanut sauce ingredients. Combine noodles, vegetables, and dressing, then toss to coat.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Prepare the vegetables by shredding the cabbage and grating the carrots. Place in a large serving bowl."
+      },
+      {
+        "number": 2,
+        "step": "Bring a large pot of water to a boil and cook the soba noodles according to package directions. Drain and rinse with cold water."
+      },
+      {
+        "number": 3,
+        "step": "In a liquid measuring cup or medium bowl, whisk together the peanut butter, rice vinegar, sesame oil, tamari, ginger, and garlic until smooth."
+      },
+      {
+        "number": 4,
+        "step": "Add the cooled soba noodles and chopped green onions to the bowl with the vegetables."
+      },
+      {
+        "number": 5,
+        "step": "Pour the peanut dressing over the mixture and toss well to coat."
+      },
+      {
+        "number": 6,
+        "step": "For the best flavor, let the slaw marinate for 20 minutes before serving."
+      }
+    ],
+    "nutrition": {
+      "calories": 410,
+      "protein": 14,
+      "carbs": 48,
+      "fat": 20,
+      "fiber": 7
+    },
+    "reviews": [
+      {
+        "user": "Crunch_Commander",
+        "rating": 4,
+        "testimonial": "The ginger-peanut ratio is electric. I added some extra chili flakes because I like to live dangerously. Great for a summer potluck."
+      },
+      {
+        "user": "SoggyNoodleHater",
+        "rating": 2,
+        "testimonial": "Whatever you do, don't let this sit overnight. The soba noodles soaked up all the dressing and turned into a peanut-flavored sponge. Eat it immediately!"
+      }
+    ]
+  },
+  {
+    "id": 505,
+    "title": "Gourmet Mushroom Bourguignon",
+    "image": "https://jessicainthekitchen.com/wp-content/uploads/2026/02/Vegan-Mushroom-Bourguignon-13.jpg",
+    "servings": 6,
+    "readyInMinutes": 65,
+    "preparationMinutes": 20,
+    "glutenFree": true,
+    "veryHealthy": true,
+    "cheap": false,
+    "dishTypes": ["main course", "dinner"],
+    "cookingMinutes": 45,
+    "aggregateLikes": 450,
+    "sourceName": "Jessica in the Kitchen",
+    "sourceUrl": "https://jessicainthekitchen.com/mushroom-bourguignon/",
+    "weightPerServing": { "amount": 400, "unit": "g" },
+    "tags": ["gourmet", "french", "dinner party", "umami", "date night"],
+    "summary": "A rich, sophisticated stew featuring baby bella and shiitake mushrooms, pearl onions, and a deeply reduced red wine sauce.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "olive oil",
+        "emoji": "🫒",
+        "amount": 3,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 2,
+        "name": "shallots",
+        "emoji": "🧅",
+        "amount": 4,
+        "unit": "large",
+        "preparation": "finely minced"
+      },
+      {
+        "id": 3,
+        "name": "cremini mushrooms",
+        "emoji": "🍄",
+        "amount": 1.5,
+        "unit": "lbs",
+        "preparation": "thickly sliced"
+      },
+      {
+        "id": 4,
+        "name": "garlic",
+        "emoji": "🧄",
+        "amount": 4,
+        "unit": "cloves",
+        "preparation": "minced"
+      },
+      {
+        "id": 5,
+        "name": "tomato paste",
+        "emoji": "🍅",
+        "amount": 2,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 6,
+        "name": "dry red wine",
+        "emoji": "🍷",
+        "amount": 1.5,
+        "unit": "cups",
+        "preparation": "Pinot Noir or Merlot"
+      },
+      {
+        "id": 7,
+        "name": "vegetable broth",
+        "emoji": "🥣",
+        "amount": 2,
+        "unit": "cups",
+        "preparation": "low sodium"
+      },
+      {
+        "id": 8,
+        "name": "pearl onions",
+        "emoji": "🧅",
+        "amount": 10,
+        "unit": "oz",
+        "preparation": "peeled"
+      },
+      {
+        "id": 9,
+        "name": "balsamic vinegar",
+        "emoji": "🧪",
+        "amount": 1,
+        "unit": "tbsp",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Sauté mirepoix and mushrooms until deep golden. Deglaze with red wine, reduce, then simmer with broth and herbs for 30 minutes until glossy and thick.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Sauté the shallots, carrots, and celery in olive oil until soft and translucent."
+      },
+      {
+        "number": 2,
+        "step": "Add mushrooms in batches, cooking until they release their liquid and become deep golden brown."
+      },
+      {
+        "number": 3,
+        "step": "Stir in tomato paste and flour, cooking for 2 minutes to remove the raw flour taste."
+      },
+      {
+        "number": 4,
+        "step": "Pour in the red wine to deglaze, scraping the bottom of the pot for browned bits. Reduce by half."
+      },
+      {
+        "number": 5,
+        "step": "Add broth, thyme, and pearl onions. Simmer uncovered for 25-30 minutes until the sauce is thick and glossy."
+      },
+      {
+        "number": 6,
+        "step": "Stir in balsamic vinegar and serve over creamy mashed potatoes or cauliflower purée."
+      }
+    ],
+    "nutrition": {
+      "calories": 310,
+      "protein": 9,
+      "carbs": 22,
+      "fat": 12,
+      "fiber": 5
+    },
+    "reviews": [
+      {
+        "user": "The_Michelin_Tourist",
+        "rating": 5,
+        "testimonial": "Sublime. The depth of flavor in the wine reduction rivals any meat-based version I've had in Paris. A true technical masterpiece for a home cook."
+      },
+      {
+        "user": "Kitchen_Chaos_Kevin",
+        "rating": 4,
+        "testimonial": "Took me way longer than 65 minutes because I kept eating the sautéed mushrooms. The sauce is incredible, just make sure you use a wine you actually like drinking!"
+      },
+      {
+        "user": "Picky_Eater_Patty",
+        "rating": 5,
+        "testimonial": "I usually hate mushrooms, but the texture here is so meaty and savory that I forgot what I was eating. My husband didn't even realize it was vegan."
+      },
+      {
+        "user": "Budget_Betty",
+        "rating": 3,
+        "testimonial": "It's delicious, but wow, pearl onions are a nightmare to peel. And a whole bottle of decent wine makes this a very 'special occasion' price point."
+      },
+      {
+        "user": "Herbivore_Hunter",
+        "rating": 5,
+        "testimonial": "This is the 'Final Boss' of vegan recipes. If you nail the browning of the mushrooms, you'll be a legend. 10/10 would stain my apron again."
+      },
+      {
+        "user": "Sodium_Sam",
+        "rating": 4,
+        "testimonial": "Great flavor, but careful with the broth choice. If you use full-sodium broth plus the tomato paste, it can get a bit salty. The balsamic at the end fixes everything though."
+      }
+    ]
+  }
+]
