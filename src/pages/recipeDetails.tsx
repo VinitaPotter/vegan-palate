@@ -1,10 +1,14 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import recipes from "../data/recipes.json";
+
+import confetti from "canvas-confetti";
+
 import RecipeDescriptionCard from "../components/recipeNutritionCard";
 import Related from "../components/related";
-import { useParams } from "react-router";
-import { useEffect, useState } from "react";
-import recipes from "../data/recipes.json";
+import ReviewDialogue from "../components/reviewDialogue";
+
 import type { Meal } from "../types/meal";
-import confetti from "canvas-confetti";
 
 export default function RecipeDetails() {
   const fire = () => {
@@ -21,6 +25,7 @@ export default function RecipeDetails() {
     rating: number;
     testimonial: string;
   }
+  const [showDialogue, setShowDialogue] = useState<boolean>(false);
   const [mealRecipe, setMealRecipe] = useState<Meal | null>(null);
   const [topUserReview, setTopUserReview] = useState<topReview | null>(null);
   const foodEmojis = [
@@ -46,6 +51,12 @@ export default function RecipeDetails() {
     "🥥",
   ];
 
+  function celebrate(): void {
+    fire();
+    setTimeout(() => {
+      setShowDialogue(true);
+    }, 1000);
+  }
   function getTopReview(): void {
     const foundReview = mealRecipe?.reviews.find(
       (review) => review.rating >= 4,
@@ -78,6 +89,11 @@ export default function RecipeDetails() {
 
   return (
     <div>
+      {showDialogue ? (
+        <ReviewDialogue handleDialogueWindow={setShowDialogue} />
+      ) : (
+        <></>
+      )}
       {mealRecipe && Object.keys(mealRecipe).length ? (
         <div
           className="bg-bottom"
@@ -181,7 +197,7 @@ export default function RecipeDetails() {
               </div>
               <p
                 className="bg-primary text-semibold text-xl text-white cursor-pointer hover:scale-101 duarion-1000 p-2 rounded-lg items-center text-center hover:shadow-lg w-56 my-14 ml-[10ch]"
-                onClick={fire}
+                onClick={celebrate}
               >
                 I made it →
               </p>
