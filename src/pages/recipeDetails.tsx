@@ -4,8 +4,16 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import recipes from "../data/recipes.json";
 import type { Meal } from "../types/meal";
+import confetti from "canvas-confetti";
 
 export default function RecipeDetails() {
+  const fire = () => {
+    confetti({
+      particleCount: 120,
+      spread: 80,
+      origin: { y: 0.6 },
+    });
+  };
   const params = useParams();
   const recipeId = Number(params.id);
   interface topReview {
@@ -171,7 +179,10 @@ export default function RecipeDetails() {
                   </p>
                 </ol>
               </div>
-              <p className="bg-primary text-semibold text-xl text-white cursor-pointer hover:scale-101 duarion-1000 p-2 rounded-lg items-center text-center hover:shadow-lg w-56 my-14 ml-[10ch]">
+              <p
+                className="bg-primary text-semibold text-xl text-white cursor-pointer hover:scale-101 duarion-1000 p-2 rounded-lg items-center text-center hover:shadow-lg w-56 my-14 ml-[10ch]"
+                onClick={fire}
+              >
                 I made it →
               </p>
             </div>
