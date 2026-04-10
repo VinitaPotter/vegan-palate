@@ -4,9 +4,9 @@ import RecipeCard from "../components/recipeCard";
 import type { Meal } from "../types/meal";
 
 type MealCard = Pick<Meal, "id" | "title" | "image" | "readyInMinutes">;
-
+type TrendingMeal = [Meal, Meal, Meal, Meal];
 export default function Home() {
-  const [trending, setTrending] = useState<Meal[]>([]);
+  const [trending, setTrending] = useState<TrendingMeal[]>([]);
 
   function getRecipes(): Promise<MealCard[]> {
     return new Promise((resolve) => {
@@ -34,9 +34,16 @@ export default function Home() {
       </div>
       <div className="bg-accent">
         <div className="flex justify-around h-[70vh] ">
-          {trending.map((t, index) => (
-            <RecipeCard key={index + 1} index={index} meal={t} />
-          ))}
+          {(trending && trending.length ? trending : Array.from(Array(4))).map(
+            (t, index) => (
+              <RecipeCard
+                key={index + 1}
+                index={index}
+                meal={t}
+                rotate={true}
+              />
+            ),
+          )}
         </div>
       </div>
     </div>

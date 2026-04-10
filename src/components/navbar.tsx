@@ -10,7 +10,9 @@ export default function Navbar() {
         </Link>
       </p>
       <div className="flex justify-around w-1/3 p-4">
-        <p className="cursor-pointer">My recipes</p>
+        <Link to={"/favorites"}>
+          <p className="cursor-pointer">My recipes</p>
+        </Link>
         <p className="cursor-pointer">Helpful resources</p>
         <p className="cursor-pointer">Events</p>
         <p className="cursor-pointer">Blog</p>
