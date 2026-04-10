@@ -4,6 +4,7 @@ import RecipeCard from "../components/recipeCard";
 import type { Meal } from "../types/meal";
 import Search from "../components/search";
 import { useNavigate } from "react-router-dom";
+import Skeleton from "../components/skeleton";
 
 type MealCard = Pick<Meal, "id" | "title" | "image" | "readyInMinutes">;
 
@@ -89,6 +90,7 @@ export default function Favorites() {
             );
           })}
         </div>
+        {/* recipes */}
         <div
           className="flex flex-wrap overflow-scroll w-full"
           style={{ height: `calc(100vh - 4rem)` }}
@@ -116,7 +118,15 @@ export default function Favorites() {
               </div>
             </div>
           ) : (
-            <></>
+            <div className="flex flex-wrap">
+              {Array.from(Array(8)).map((skeleton) => {
+                return (
+                  <div className=" bg-white m-6 border px-4 py-2 border-gray-200 w-78 rounded-2xl h-96">
+                    <Skeleton />
+                  </div>
+                );
+              })}
+            </div>
           )}
         </div>
       </div>

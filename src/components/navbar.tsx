@@ -13,14 +13,19 @@ export default function Navbar() {
         <Link to={"/favorites"}>
           <p className="cursor-pointer">My recipes</p>
         </Link>
-        <p className="cursor-pointer">Helpful resources</p>
-        <p className="cursor-pointer">Events</p>
-        <p className="cursor-pointer">Blog</p>
+        <Link to={"/resources"}>
+          <p className="cursor-pointer">Helpful resources</p>
+        </Link>
+        <Link to={"/events"}>
+          <p className="cursor-pointer">Events</p>
+        </Link>
       </div>
       <div className="p-4">
-        <p className="text-right border py-1 px-2 cursor-pointer">
-          Get started
-        </p>
+        <Link to={"/search"}>
+          <p className=" border py-1 px-4 rounded-xl hover:scale-105 hover:bg-primary hover:text-white cursor-pointer flex items-center">
+            Search
+          </p>
+        </Link>
       </div>
     </div>
   );

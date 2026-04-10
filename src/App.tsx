@@ -6,7 +6,8 @@ import Home from "./pages/home";
 import RecipeDetails from "./pages/recipeDetails";
 import Favorites from "./pages/favorites";
 import SearchPage from "./pages/searchPage";
-
+import Resources from "./pages/resources";
+import Events from "./pages/events";
 const Layout = () => (
   <>
     <Navbar />
@@ -22,6 +23,8 @@ const router = createBrowserRouter([
       { path: "/recipe/:id", element: <RecipeDetails /> },
       { path: "favorites", element: <Favorites /> },
       { path: "search", element: <SearchPage /> },
+      { path: "resources", element: <Resources /> },
+      { path: "events", element: <Events /> },
     ],
   },
 ]);
