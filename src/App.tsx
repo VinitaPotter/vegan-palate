@@ -31,7 +31,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <div className="max-h-[100vh] overflow-hidden">
       <RouterProvider router={router} />
     </div>
   );

@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo_yellow_bg.png";
 export default function Navbar() {
   return (
-    <div className="flex  justify-between  w-full h-16 border-b border-b-gray-200">
+    <div className="flex  justify-between bg-accent w-full h-16 border-b border-b-gray-200">
       <p className="w-1/5 cursor-pointer">
         <Link to={`/`}>
-          <img src={Logo} width="150" height="60" className="bg-transparent" />
+          <img
+            src={Logo}
+            width="150"
+            height="55"
+            className="bg-transparent h-16 object-cover"
+          />
         </Link>
       </p>
       <div className="flex justify-around w-1/3 p-4">

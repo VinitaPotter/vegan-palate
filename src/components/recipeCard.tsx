@@ -38,7 +38,7 @@ export default function RecipeCard({
         style={
           rotate
             ? {
-                transform: `rotate(${(index - 3 / 2) * 17}deg) translateY(${[0, 3].includes(index) ? 100 : 0}px)`,
+                transform: `rotate(${(index - 3 / 2) * 17}deg) translateY(${[0, 3].includes(index) ? 100 : -20}px)`,
               }
             : {}
         }
