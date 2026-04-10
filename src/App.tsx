@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./pages/home";
 import RecipeDetails from "./pages/recipeDetails";
 import Favorites from "./pages/favorites";
+import SearchPage from "./pages/searchPage";
 
 const Layout = () => (
   <>
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/recipe/:id", element: <RecipeDetails /> },
       { path: "favorites", element: <Favorites /> },
+      { path: "search", element: <SearchPage /> },
     ],
   },
 ]);

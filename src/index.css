@@ -62,6 +62,10 @@
   font-family: "Elsie Swash Caps", serif;
 }
 
+.playful-font {
+  font-family: "Annie Use Your Telescope", cursive;
+}
+
 .ticket-mask {
   mask-image:
     radial-gradient(
@@ -126,4 +130,29 @@
 
 .list-roman {
   list-style-type: lower-roman;
+}
+
+.indicator::after {
+  content: "";
+  background-color: --color-accent;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 0px;
+  top: -20px;
+  border: 1px solid --color-accent;
+  border-radius: 10px 20px 20px 10px;
+  box-shadow: 7px 7px 0 #fff;
+}
+.indicator::before {
+  content: "";
+  background-color: --color-accent;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 0px;
+  bottom: -20px;
+  border: 1px solid --color-accent;
+  border-radius: 10px 20px 20px 10px;
+  box-shadow: 7px -7px 0 #fff;
 }
