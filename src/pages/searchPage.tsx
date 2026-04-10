@@ -39,7 +39,7 @@ export default function SearchPage() {
       });
     } else {
       setSearchedRecipes((prev) => {
-        return [...recipes];
+        return [];
       });
     }
     setTimeout(() => {
@@ -56,7 +56,13 @@ export default function SearchPage() {
         <div className="text-center mt-10">
           <Search query={query} onSearch={handleQueryChange} />
         </div>
-        {loading ? (
+        {!query && !searchedRecipes?.length && !loading ? (
+          <div>
+            <div className="playful-font text-2xl text-center mt-20">
+              What would you like to eat today, chef!?
+            </div>
+          </div>
+        ) : loading ? (
           <div className="flex flex-wrap">
             {Array.from(Array(8)).map((skeleton) => {
               return (
@@ -64,7 +70,7 @@ export default function SearchPage() {
               );
             })}
           </div>
-        ) : !loading && searchedRecipes && searchedRecipes?.length ? (
+        ) : !loading && searchedRecipes?.length ? (
           <div className="flex flex-wrap">
             {searchedRecipes.map((recipe, index) => {
               return (

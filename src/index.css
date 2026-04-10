@@ -122,8 +122,9 @@
   margin-right: -3px;
   position: absolute;
   background: #ffd500;
-  transform: rotate(2deg);
+  transform: rotate(-2deg);
   left: -1px;
+  top: 20px;
   border-radius: 20% 25% 20% 24%;
   padding: 10px 3px 3px 10px;
 }
