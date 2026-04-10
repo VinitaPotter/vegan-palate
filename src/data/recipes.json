@@ -657,5 +657,850 @@
         "testimonial": "Great flavor, but careful with the broth choice. If you use full-sodium broth plus the tomato paste, it can get a bit salty. The balsamic at the end fixes everything though."
       }
     ]
+  },
+  {
+    "id": 506,
+    "title": "Loaded Breakfast Burritos",
+    "image": "https://thehappypear.ie/wp-content/uploads/2022/03/IMG_1007-1366x2048.jpg",
+    "servings": 2,
+    "readyInMinutes": 35,
+    "preparationMinutes": 15,
+    "glutenFree": false,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["breakfast", "brunch"],
+    "cookingMinutes": 20,
+    "aggregateLikes": 320,
+    "sourceName": "The Happy Pear",
+    "sourceUrl": "https://thehappypear.ie/plant-based-and-vegan-recipes/breakfast-burrito/",
+    "weightPerServing": { "amount": 450, "unit": "g" },
+    "tags": ["high protein", "tofu scramble", "spicy", "filling"],
+    "summary": "A hearty, portable breakfast featuring protein-packed tofu scramble, crispy potatoes, and a kick of sriracha.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "firm tofu",
+        "emoji": "🫘",
+        "amount": 200,
+        "unit": "g",
+        "preparation": "crumbled"
+      },
+      {
+        "id": 2,
+        "name": "potatoes",
+        "emoji": "🥔",
+        "amount": 500,
+        "unit": "g",
+        "preparation": "diced and cooked"
+      },
+      {
+        "id": 3,
+        "name": "wholemeal tortillas",
+        "emoji": "🌯",
+        "amount": 2,
+        "unit": "large",
+        "preparation": ""
+      },
+      {
+        "id": 4,
+        "name": "nutritional yeast",
+        "emoji": "🧀",
+        "amount": 1,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 5,
+        "name": "avocado",
+        "emoji": "🥑",
+        "amount": 0.5,
+        "unit": "whole",
+        "preparation": "sliced"
+      },
+      {
+        "id": 6,
+        "name": "sriracha",
+        "emoji": "🔥",
+        "amount": 1,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 7,
+        "name": "turmeric",
+        "emoji": "🟡",
+        "amount": 0.25,
+        "unit": "tsp",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Sauté potatoes until crispy. Season crumbled tofu with turmeric and yeast. Fill tortillas with potatoes, tofu, and avocado. Toast until golden.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Fry the diced potatoes in a pan with a little oil until golden and crispy."
+      },
+      {
+        "number": 2,
+        "step": "In a separate pan, scramble the tofu with turmeric, garlic powder, and nutritional yeast."
+      },
+      {
+        "number": 3,
+        "step": "Lay out tortillas, spread with sriracha mayo, then layer potatoes, tofu, and avocado."
+      },
+      { "number": 4, "step": "Fold in the sides and roll tightly." },
+      {
+        "number": 5,
+        "step": "Toast the burrito in a dry pan for 2 minutes per side until the wrap is crunchy."
+      }
+    ],
+    "nutrition": {
+      "calories": 540,
+      "protein": 22,
+      "carbs": 68,
+      "fat": 24,
+      "fiber": 12
+    },
+    "reviews": [
+      {
+        "user": "Morning_Warrior",
+        "rating": 5,
+        "testimonial": "Finally a vegan breakfast that actually keeps me full until lunch. The crispy potatoes are essential!"
+      },
+      {
+        "user": "Spice_Lord",
+        "rating": 4,
+        "testimonial": "Great base, but I doubled the sriracha. The turmeric gives the tofu such a convincing egg color."
+      }
+    ]
+  },
+  {
+    "id": 507,
+    "title": "Raw Lemon & Coconut Cheesecake",
+    "image": "https://www.swoonfood.com/wp-content/uploads/2016/03/Lemon-cheesecake-slice-072-3.jpg",
+    "servings": 8,
+    "readyInMinutes": 300,
+    "preparationMinutes": 30,
+    "glutenFree": true,
+    "veryHealthy": false,
+    "cheap": false,
+    "dishTypes": ["dessert"],
+    "cookingMinutes": 0,
+    "aggregateLikes": 510,
+    "sourceName": "Swoon Food",
+    "sourceUrl": "https://www.swoonfood.com/raw-lemon-coconut-cheesecake/",
+    "weightPerServing": { "amount": 125, "unit": "g" },
+    "tags": ["raw vegan", "gluten-free", "refined sugar free", "zesty"],
+    "summary": "A decadent, creamy no-bake dessert made with a nut-based crust and a luscious cashew-lemon filling.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "raw cashews",
+        "emoji": "🥜",
+        "amount": 2,
+        "unit": "cups",
+        "preparation": "soaked 4 hours"
+      },
+      {
+        "id": 2,
+        "name": "medjool dates",
+        "emoji": "🌴",
+        "amount": 10,
+        "unit": "whole",
+        "preparation": "pitted"
+      },
+      {
+        "id": 3,
+        "name": "brazil nuts",
+        "emoji": "🌰",
+        "amount": 0.5,
+        "unit": "cup",
+        "preparation": ""
+      },
+      {
+        "id": 4,
+        "name": "lemon juice",
+        "emoji": "🍋",
+        "amount": 0.5,
+        "unit": "cup",
+        "preparation": "fresh"
+      },
+      {
+        "id": 5,
+        "name": "coconut oil",
+        "emoji": "🥥",
+        "amount": 0.33,
+        "unit": "cup",
+        "preparation": "melted"
+      },
+      {
+        "id": 6,
+        "name": "maple syrup",
+        "emoji": "🍁",
+        "amount": 0.33,
+        "unit": "cup",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Pulse nuts and dates for the crust. Blend soaked cashews with lemon, oil, and syrup. Pour over base and freeze until set.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Process brazil nuts and dates until sticky. Press into the bottom of a lined tin."
+      },
+      { "number": 2, "step": "Drain and rinse the soaked cashews." },
+      {
+        "number": 3,
+        "step": "Blend cashews, lemon juice, coconut oil, and maple syrup until completely smooth and creamy."
+      },
+      {
+        "number": 4,
+        "step": "Pour the filling over the crust and smooth the top."
+      },
+      {
+        "number": 5,
+        "step": "Freeze for at least 4 hours. Thaw for 15 minutes before serving."
+      }
+    ],
+    "nutrition": {
+      "calories": 385,
+      "protein": 8,
+      "carbs": 32,
+      "fat": 28,
+      "fiber": 4
+    },
+    "reviews": []
+  },
+  {
+    "id": 508,
+    "title": "Spicy Roasted Chickpeas",
+    "image": "https://www.diabetes.org.uk/sites/default/files/styles/recipe_desktop/public/migration/recipes/SpicyRoastedChickpeas1000x600.jpg?itok=LkN9mjDY",
+    "servings": 4,
+    "readyInMinutes": 40,
+    "preparationMinutes": 5,
+    "glutenFree": true,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["snack"],
+    "cookingMinutes": 35,
+    "aggregateLikes": 88,
+    "sourceName": "Diabetes UK",
+    "sourceUrl": "https://www.diabetes.org.uk/living-with-diabetes/eating/recipes/spicy-roasted-chickpeas",
+    "weightPerServing": { "amount": 50, "unit": "g" },
+    "tags": ["crunchy", "high fiber", "low calorie", "savory"],
+    "summary": "The ultimate healthy crunchy snack. These chickpeas are roasted until crisp and tossed in a smoky spice blend.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "canned chickpeas",
+        "emoji": "🫘",
+        "amount": 400,
+        "unit": "g",
+        "preparation": "drained and dried"
+      },
+      {
+        "id": 2,
+        "name": "rapeseed oil",
+        "emoji": "🛢️",
+        "amount": 2,
+        "unit": "tsp",
+        "preparation": ""
+      },
+      {
+        "id": 3,
+        "name": "ground cumin",
+        "emoji": "🧂",
+        "amount": 0.5,
+        "unit": "tsp",
+        "preparation": ""
+      },
+      {
+        "id": 4,
+        "name": "chilli powder",
+        "emoji": "🌶️",
+        "amount": 0.5,
+        "unit": "tsp",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Dry chickpeas thoroughly. Toss with oil and spices. Roast at 190°C for 30-35 minutes until crunchy.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Preheat oven to 190°C. Pat the chickpeas dry with a paper towel; this is key for crunch."
+      },
+      {
+        "number": 2,
+        "step": "Toss chickpeas in a bowl with oil, cumin, and chilli powder."
+      },
+      { "number": 3, "step": "Spread in a single layer on a baking sheet." },
+      {
+        "number": 4,
+        "step": "Roast for 30-35 mins, shaking the pan halfway through, until dark and crispy."
+      }
+    ],
+    "nutrition": {
+      "calories": 79,
+      "protein": 4,
+      "carbs": 8,
+      "fat": 3,
+      "fiber": 3
+    },
+    "reviews": [
+      {
+        "user": "Snack_Attacker",
+        "rating": 5,
+        "testimonial": "Better than chips! I keep a jar of these on my desk at all times."
+      },
+      {
+        "user": "Burner_Betty",
+        "rating": 3,
+        "testimonial": "Make sure they are really dry before roasting or they stay mushy in the middle."
+      },
+      {
+        "user": "Flavor_Seeker",
+        "rating": 4,
+        "testimonial": "Added some garlic powder and lime zest at the end. Incredible."
+      }
+    ]
+  },
+  {
+    "id": 509,
+    "title": "Avocado Chocolate Mousse",
+    "image": "https://thebigmansworld.com/wp-content/uploads/2024/10/avocado-chocolate-mousse.jpg",
+    "servings": 6,
+    "readyInMinutes": 15,
+    "preparationMinutes": 15,
+    "glutenFree": true,
+    "veryHealthy": true,
+    "cheap": false,
+    "dishTypes": ["dessert", "snack"],
+    "cookingMinutes": 0,
+    "aggregateLikes": 275,
+    "sourceName": "The Holistic Health Method",
+    "sourceUrl": "https://www.theholistichealthmethod.com/recipes/avocado-chocolate-mousse",
+    "weightPerServing": { "amount": 100, "unit": "g" },
+    "tags": ["superfood", "creamy", "keto-friendly", "no-cook"],
+    "summary": "A rich, silky chocolate mousse that uses avocado for a healthy fat base. You'll never taste the green!",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "ripe avocados",
+        "emoji": "🥑",
+        "amount": 2,
+        "unit": "medium",
+        "preparation": "pitted"
+      },
+      {
+        "id": 2,
+        "name": "cocoa powder",
+        "emoji": "🍫",
+        "amount": 0.5,
+        "unit": "cup",
+        "preparation": "unsweetened"
+      },
+      {
+        "id": 3,
+        "name": "maple syrup",
+        "emoji": "🍁",
+        "amount": 0.5,
+        "unit": "cup",
+        "preparation": ""
+      },
+      {
+        "id": 4,
+        "name": "vanilla extract",
+        "emoji": "🧪",
+        "amount": 1,
+        "unit": "tsp",
+        "preparation": ""
+      },
+      {
+        "id": 5,
+        "name": "almond milk",
+        "emoji": "🥛",
+        "amount": 0.33,
+        "unit": "cup",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Combine all ingredients in a food processor. Blend until silky smooth. Chill before serving.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Scoop avocado flesh into a blender or food processor."
+      },
+      {
+        "number": 2,
+        "step": "Add cocoa powder, maple syrup, vanilla, and a splash of almond milk."
+      },
+      {
+        "number": 3,
+        "step": "Blend on high until no green lumps remain and the texture is like velvet."
+      },
+      { "number": 4, "step": "Taste and adjust sweetness if necessary." },
+      {
+        "number": 5,
+        "step": "Refrigerate for at least 1 hour to set the texture."
+      }
+    ],
+    "nutrition": {
+      "calories": 210,
+      "protein": 3,
+      "carbs": 24,
+      "fat": 14,
+      "fiber": 7
+    },
+    "reviews": [
+      {
+        "user": "Skeptic_Sarah",
+        "rating": 5,
+        "testimonial": "I was so worried it would taste like guacamole, but it's just pure, rich chocolate. My kids have no idea!"
+      }
+    ]
+  },
+  {
+    "id": 510,
+    "title": "Blueberry Power Pancakes",
+    "image": "https://lovingitvegan.com/wp-content/uploads/2020/07/Vegan-Blueberry-Pancakes-19.jpg",
+    "servings": 4,
+    "readyInMinutes": 20,
+    "preparationMinutes": 10,
+    "glutenFree": false,
+    "veryHealthy": false,
+    "cheap": true,
+    "dishTypes": ["breakfast"],
+    "cookingMinutes": 10,
+    "aggregateLikes": 155,
+    "sourceName": "Vegan Yumminess",
+    "sourceUrl": "https://veganyumminess.com/vegan-blueberry-pancakes/",
+    "weightPerServing": { "amount": 200, "unit": "g" },
+    "tags": ["classic", "kid-friendly", "fluffy", "brunch"],
+    "summary": "Classic, fluffy American-style pancakes bursting with fresh blueberries. No eggs or dairy required!",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "all-purpose flour",
+        "emoji": "🌾",
+        "amount": 1.5,
+        "unit": "cups",
+        "preparation": ""
+      },
+      {
+        "id": 2,
+        "name": "almond milk",
+        "emoji": "🥛",
+        "amount": 1.25,
+        "unit": "cups",
+        "preparation": ""
+      },
+      {
+        "id": 3,
+        "name": "blueberries",
+        "emoji": "🫐",
+        "amount": 1,
+        "unit": "cup",
+        "preparation": "fresh"
+      },
+      {
+        "id": 4,
+        "name": "baking powder",
+        "emoji": "🧪",
+        "amount": 1,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 5,
+        "name": "coconut oil",
+        "emoji": "🥥",
+        "amount": 2,
+        "unit": "tbsp",
+        "preparation": "melted"
+      }
+    ],
+    "instructions": "Whisk dry and wet ingredients separately, then combine. Fold in blueberries. Cook on a griddle until bubbly and flip.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "In a large bowl, whisk together flour, baking powder, and a pinch of salt."
+      },
+      {
+        "number": 2,
+        "step": "Pour in the almond milk and melted coconut oil, stirring until just combined (don't overmix!)."
+      },
+      { "number": 3, "step": "Gently fold in the blueberries." },
+      {
+        "number": 4,
+        "step": "Heat a non-stick skillet over medium heat. Pour 1/4 cup of batter per pancake."
+      },
+      {
+        "number": 5,
+        "step": "Flip when bubbles appear on the surface and the edges look set."
+      }
+    ],
+    "nutrition": {
+      "calories": 280,
+      "protein": 6,
+      "carbs": 42,
+      "fat": 9,
+      "fiber": 3
+    },
+    "reviews": []
+  },
+  {
+    "id": 511,
+    "title": "Sticky Miso Ginger Tofu",
+    "image": "https://woonheng.com/wp-content/uploads/2022/02/Ginger-Miso-Tofu-9303-819x1024.jpg",
+    "servings": 3,
+    "readyInMinutes": 30,
+    "preparationMinutes": 10,
+    "glutenFree": true,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["main course", "lunch"],
+    "cookingMinutes": 20,
+    "aggregateLikes": 290,
+    "sourceName": "Choosing Chia",
+    "sourceUrl": "https://choosingchia.com/sticky-miso-ginger-tofu/",
+    "weightPerServing": { "amount": 300, "unit": "g" },
+    "tags": ["asian-inspired", "high protein", "umami", "weeknight-dinner"],
+    "summary": "Crispy tofu cubes glazed in a savory, sweet, and slightly spicy miso ginger sauce.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "extra firm tofu",
+        "emoji": "🫘",
+        "amount": 14,
+        "unit": "oz",
+        "preparation": "pressed and cubed"
+      },
+      {
+        "id": 2,
+        "name": "white miso paste",
+        "emoji": "🍶",
+        "amount": 2,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 3,
+        "name": "maple syrup",
+        "emoji": "🍁",
+        "amount": 1,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 4,
+        "name": "fresh ginger",
+        "emoji": "🫚",
+        "amount": 2,
+        "unit": "tsp",
+        "preparation": "grated"
+      },
+      {
+        "id": 5,
+        "name": "cornstarch",
+        "emoji": "☁️",
+        "amount": 2,
+        "unit": "tbsp",
+        "preparation": "for coating"
+      }
+    ],
+    "instructions": "Coat tofu in cornstarch and pan-fry until crispy. Whisk sauce ingredients and pour over tofu, simmering until thick and glossy.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Toss the tofu cubes in cornstarch until evenly coated."
+      },
+      {
+        "number": 2,
+        "step": "Fry in a hot pan with oil until all sides are golden brown."
+      },
+      {
+        "number": 3,
+        "step": "In a small bowl, whisk miso, ginger, syrup, and a splash of water."
+      },
+      {
+        "number": 4,
+        "step": "Reduce heat, pour sauce over tofu, and toss until the glaze sticks to the cubes."
+      }
+    ],
+    "nutrition": null,
+    "reviews": [
+      {
+        "user": "Tofu_Transformation",
+        "rating": 5,
+        "testimonial": "This converted my boyfriend who used to think tofu was 'sad sponge.' The glaze is addictive!"
+      }
+    ]
+  },
+  {
+    "id": 512,
+    "title": "Mediterranean Chickpea Salad",
+    "image": null,
+    "servings": 4,
+    "readyInMinutes": 15,
+    "preparationMinutes": 15,
+    "glutenFree": true,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["salad", "lunch", "snack"],
+    "cookingMinutes": 0,
+    "aggregateLikes": 115,
+    "sourceName": "Healthy Nibbles",
+    "sourceUrl": "https://healthynibblesandbits.com/mediterranean-chickpea-salad/",
+    "weightPerServing": { "amount": 250, "unit": "g" },
+    "tags": ["no-cook", "meal-prep", "fresh", "fiber"],
+    "summary": "A refreshing mix of chickpeas, cucumbers, and tomatoes with a zesty lemon-herb vinaigrette.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "chickpeas",
+        "emoji": "🫘",
+        "amount": 1,
+        "unit": "can",
+        "preparation": "drained and rinsed"
+      },
+      {
+        "id": 2,
+        "name": "cucumber",
+        "emoji": "🥒",
+        "amount": 1,
+        "unit": "large",
+        "preparation": "diced"
+      },
+      {
+        "id": 3,
+        "name": "cherry tomatoes",
+        "emoji": "🍅",
+        "amount": 1,
+        "unit": "cup",
+        "preparation": "halved"
+      },
+      {
+        "id": 4,
+        "name": "parsley",
+        "emoji": "🌿",
+        "amount": 0.25,
+        "unit": "cup",
+        "preparation": "freshly chopped"
+      }
+    ],
+    "instructions": "Chop all vegetables and combine in a large bowl. Toss with lemon juice, olive oil, and dried oregano.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Combine chickpeas and chopped vegetables in a bowl."
+      },
+      { "number": 2, "step": "Whisk dressing and pour over the salad." }
+    ],
+    "nutrition": {
+      "calories": 190,
+      "protein": 7,
+      "carbs": 28,
+      "fat": 6,
+      "fiber": 9
+    },
+    "reviews": []
+  },
+  {
+    "id": 513,
+    "title": "Overnight Chia Pudding",
+    "image": "https://cdn.loveandlemons.com/wp-content/uploads/2021/05/chia-seed-pudding-1.jpg",
+    "servings": 1,
+    "readyInMinutes": 480,
+    "preparationMinutes": 5,
+    "glutenFree": true,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["breakfast", "snack"],
+    "cookingMinutes": 0,
+    "aggregateLikes": 65,
+    "sourceName": "Love and Lemons",
+    "sourceUrl": "https://www.loveandlemons.com/chia-seed-pudding/",
+    "weightPerServing": { "amount": 200, "unit": "g" },
+    "tags": ["omega-3", "low carb", "easy breakfast"],
+    "summary": "Simple, creamy, and customizable. The perfect grab-and-go breakfast for busy mornings.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "chia seeds",
+        "emoji": "🌱",
+        "amount": 3,
+        "unit": "tbsp",
+        "preparation": ""
+      },
+      {
+        "id": 2,
+        "name": "almond milk",
+        "emoji": "🥛",
+        "amount": 1,
+        "unit": "cup",
+        "preparation": "or soy milk"
+      },
+      {
+        "id": 3,
+        "name": "vanilla extract",
+        "emoji": "🧪",
+        "amount": 0.5,
+        "unit": "tsp",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Mix seeds and milk. Let sit for 5 minutes, stir again, then refrigerate overnight.",
+    "analyzedInstructions": [],
+    "nutrition": {
+      "calories": 180,
+      "protein": 5,
+      "carbs": 12,
+      "fat": 11,
+      "fiber": 10
+    },
+    "reviews": [
+      {
+        "user": "Frog_Spawn_Fan",
+        "rating": 4,
+        "testimonial": "The texture is weird at first, but it grows on you. Great with mango!"
+      },
+      {
+        "user": "Late_For_Work_Larry",
+        "rating": 5,
+        "testimonial": "Saves me 10 minutes every morning. Life saver."
+      }
+    ]
+  },
+  {
+    "id": 514,
+    "title": "Dark Chocolate Sea Salt Bark",
+    "image": "https://minimalistbaker.com/wp-content/uploads/2023/09/Chocolate-Peanut-Butter-Snickers-Chocolate-Bark-8.jpg",
+    "servings": 10,
+    "readyInMinutes": 40,
+    "preparationMinutes": 10,
+    "glutenFree": true,
+    "veryHealthy": false,
+    "cheap": false,
+    "dishTypes": ["dessert", "snack"],
+    "cookingMinutes": 5,
+    "aggregateLikes": 400,
+    "sourceName": "Minimalist Baker",
+    "sourceUrl": "https://minimalistbaker.com/snickers-chocolate-bark/",
+    "weightPerServing": null,
+    "tags": ["chocolate", "gift idea", "3 ingredients"],
+    "summary": "A sophisticated treat that takes minutes to assemble and satisfies every sweet-and-salty craving.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "dark chocolate",
+        "emoji": "🍫",
+        "amount": 8,
+        "unit": "oz",
+        "preparation": "70% cocoa or higher"
+      },
+      {
+        "id": 2,
+        "name": "flaky sea salt",
+        "emoji": "🧂",
+        "amount": 1,
+        "unit": "tsp",
+        "preparation": ""
+      },
+      {
+        "id": 3,
+        "name": "roasted almonds",
+        "emoji": "🥜",
+        "amount": 0.5,
+        "unit": "cup",
+        "preparation": "chopped"
+      }
+    ],
+    "instructions": "Melt chocolate, spread on parchment, top with salt and nuts, and chill.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Melt chocolate in a double boiler until smooth."
+      },
+      {
+        "number": 2,
+        "step": "Spread onto a parchment-lined tray about 1/4 inch thick."
+      },
+      { "number": 3, "step": "Sprinkle with salt and nuts while still wet." },
+      {
+        "number": 4,
+        "step": "Refrigerate for 30 minutes before breaking into shards."
+      }
+    ],
+    "nutrition": {
+      "calories": 150,
+      "protein": 2,
+      "carbs": 10,
+      "fat": 12,
+      "fiber": 2
+    },
+    "reviews": [
+      {
+        "user": "Cocoa_Nut",
+        "rating": 5,
+        "testimonial": "So simple it's barely a recipe, but the salt makes it feel like it's from a boutique."
+      }
+    ]
+  },
+  {
+    "id": 515,
+    "title": "Banana Oat 'Cookies'",
+    "image": "https://www.ambitiouskitchen.com/wp-content/uploads/2014/10/6-IMG_5714-603x603.jpg",
+    "servings": 12,
+    "readyInMinutes": 25,
+    "preparationMinutes": 10,
+    "glutenFree": true,
+    "veryHealthy": true,
+    "cheap": true,
+    "dishTypes": ["snack", "breakfast"],
+    "cookingMinutes": 15,
+    "aggregateLikes": 850,
+    "sourceName": "Ambitious Kitchen",
+    "sourceUrl": "https://www.ambitiouskitchen.com/whole-wheat-banana-oatmeal-chocolate-chip-cookies/",
+    "weightPerServing": { "amount": 45, "unit": "g" },
+    "tags": ["toddler-friendly", "no sugar added", "pantry-staples"],
+    "summary": "The ultimate 2-ingredient base for a healthy snack. Soft, chewy, and naturally sweet.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "ripe bananas",
+        "emoji": "🍌",
+        "amount": 2,
+        "unit": "large",
+        "preparation": "mashed"
+      },
+      {
+        "id": 2,
+        "name": "rolled oats",
+        "emoji": "🌾",
+        "amount": 1.5,
+        "unit": "cups",
+        "preparation": ""
+      }
+    ],
+    "instructions": "Mix mashed bananas and oats. Form into discs and bake at 180°C for 15 minutes.",
+    "analyzedInstructions": [
+      { "number": 1, "step": "Mash bananas until liquidy." },
+      { "number": 2, "step": "Stir in oats until a thick dough forms." },
+      { "number": 3, "step": "Bake until firm to the touch." }
+    ],
+    "nutrition": {
+      "calories": 65,
+      "protein": 2,
+      "carbs": 13,
+      "fat": 1,
+      "fiber": 2
+    },
+    "reviews": [
+      {
+        "user": "Healthy_Mum",
+        "rating": 2,
+        "testimonial": "These aren't cookies. They are baked mush. My 2-year-old liked them, but I needed a real cookie after eating one."
+      }
+    ]
   }
 ]

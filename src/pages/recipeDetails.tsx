@@ -102,14 +102,10 @@ export default function RecipeDetails() {
             backgroundAttachment: "fixed",
           }}
         >
-          {/* <div className="h-100">
-            <img src={mealRecipe.image} alt="" srcset="" />
-          </div> */}
-
           <div className="flex w-full justify-between px-6 ">
             {/* Left section */}
             <div className="bg-white p-6 rounded-2xl w-3/4 text-lg justify-items-start mt-10">
-              <div className="bg-tertiary/50 rounded-2xl p-6  mb-14">
+              <div className="bg-tertiary/50 rounded-2xl p-6 w-full mb-14">
                 <p className="font-thin text-3xl heading-font">
                   {mealRecipe.title}
                 </p>
