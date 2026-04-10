@@ -21,6 +21,7 @@ export default function Search({ query = "", onSearch }: searchProps) {
           id="search"
           className="p-5 border border-gray-200 rounded-2xl w-1/2"
           placeholder={"Find your next favorite recipe..."}
+          autoFocus
         />
       </div>
     </div>
