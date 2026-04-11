@@ -12,6 +12,7 @@ type MealCard = Pick<
   | "glutenFree"
   | "dishTypes"
   | "instructions"
+  | "aggregateLikes"
 >;
 type recipeCardProps = {
   meal: MealCard;
@@ -45,10 +46,21 @@ export default function RecipeCard({
       >
         {meal ? (
           <div>
-            <div className="h-10">
-              <span className="border px-1 rounded text-xs">
-                {meal.dishTypes[0]}
-              </span>
+            <div className="h-10 ">
+              {rotate ? (
+                <p className="text-md mt-2">
+                  <span className="text-3xl -rotate-12 inline-block absolute -top-2.5 -left-2.5">
+                    🫶🏼
+                  </span>{" "}
+                  <span className="playful-font ">
+                    Loved by {meal.aggregateLikes}
+                  </span>
+                </p>
+              ) : (
+                <span className="border px-1 rounded text-xs">
+                  {meal.dishTypes[0]}
+                </span>
+              )}
             </div>
             <div className="text-xl mb-4 h-12">{meal.title}</div>
             <img

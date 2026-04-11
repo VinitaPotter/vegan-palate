@@ -1,30 +1,9 @@
-import { useState, useEffect } from "react";
-import recipes from "../data/recipes.json";
-import RecipeCard from "../components/recipeCard";
-import type { Meal } from "../types/meal";
 import { Link } from "react-router-dom";
+import RecipeCard from "../components/recipeCard";
+import useTrendingRecipes from "../store/recipeSelector";
 
-type MealCard = Pick<Meal, "id" | "title" | "image" | "readyInMinutes">;
-type TrendingMeal = [Meal, Meal, Meal, Meal];
 export default function Home() {
-  const [trending, setTrending] = useState<TrendingMeal[]>([]);
-
-  function getRecipes(): Promise<MealCard[]> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(recipes as Meal[]);
-      }, 500);
-    });
-  }
-
-  useEffect(() => {
-    async function getdata() {
-      const data = await getRecipes();
-      const ned = data.slice(1, 5);
-      setTrending(ned);
-    }
-    getdata();
-  }, []);
+  const trending = useTrendingRecipes();
 
   return (
     <div>
