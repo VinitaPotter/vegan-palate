@@ -9,8 +9,10 @@ import Related from "../components/related";
 import ReviewDialogue from "../components/reviewDialogue";
 
 import type { Meal } from "../types/meal";
+import { useRecipeStore } from "../store/recipesStore";
 
 export default function RecipeDetails() {
+  const favoriteIds = useRecipeStore((state) => state.favoriteIds);
   const fire = () => {
     confetti({
       particleCount: 120,
@@ -54,7 +56,7 @@ export default function RecipeDetails() {
   function celebrate(): void {
     fire();
     setTimeout(() => {
-      setShowDialogue(true);
+      if (!favoriteIds.includes(recipeId)) setShowDialogue(true);
     }, 1000);
   }
   function getTopReview(): void {
@@ -90,7 +92,10 @@ export default function RecipeDetails() {
   return (
     <div>
       {showDialogue ? (
-        <ReviewDialogue handleDialogueWindow={setShowDialogue} />
+        <ReviewDialogue
+          handleDialogueWindow={setShowDialogue}
+          recipeId={recipeId}
+        />
       ) : (
         <></>
       )}
@@ -122,7 +127,7 @@ export default function RecipeDetails() {
                     <div className="border rounded-2xl p-4">
                       <p>
                         <span className="mr-2">Top review:</span>
-                        {Array.from(Array(topUserReview.rating)).map((r) => {
+                        {Array.from(Array(topUserReview.rating)).map(() => {
                           return <span>⭐</span>;
                         })}
                       </p>

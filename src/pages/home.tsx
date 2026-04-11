@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import RecipeCard from "../components/recipeCard";
-import useTrendingRecipes from "../store/recipeSelector";
+import { useTrendingRecipes } from "../store/recipeSelector";
 
 export default function Home() {
   const trending = useTrendingRecipes();

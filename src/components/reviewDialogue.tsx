@@ -1,20 +1,39 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useRecipeStore } from "../store/recipesStore";
 type ReviewProps = {
   handleDialogueWindow: (val: boolean) => void;
+  recipeId: number;
 };
-export default function ReviewDialogue({ handleDialogueWindow }: ReviewProps) {
+export default function ReviewDialogue({
+  handleDialogueWindow,
+  recipeId,
+}: ReviewProps) {
+  const toggleFavorites = useRecipeStore((state) => state.toggleFavorite);
+  const favoriteIds = useRecipeStore((state) => state.favoriteIds);
+
   const navigate = useNavigate();
 
   const [tempRating, setTempRating] = useState<number>(0);
   const [rating, setRating] = useState<number>(0);
+  const [addToFav, setaddToFav] = useState<boolean>(false);
 
   function handleTempRating(value: number): void {
     setTempRating(value);
   }
   function giveRating(value: number): void {
     setRating(value);
+  }
+
+  function handleSubmit(): void {
+    if (addToFav) {
+      toggleFavorites(recipeId);
+      setTimeout(() => {
+        navigate(`/favorites`);
+      }, 500);
+    } else {
+      console.log("wtf");
+    }
   }
   return (
     <div>
@@ -44,7 +63,9 @@ export default function ReviewDialogue({ handleDialogueWindow }: ReviewProps) {
             <input
               type="checkbox"
               name="myCheckbox"
-              className=" h-4 w-4 cursor-pointer "
+              className=" h-4 w-4 cursor-pointer"
+              onChange={() => setaddToFav((prev) => !prev)}
+              defaultChecked={favoriteIds.includes(recipeId)}
             />
           </label>
         </div>
@@ -57,7 +78,7 @@ export default function ReviewDialogue({ handleDialogueWindow }: ReviewProps) {
           </p>
           <p
             className="px-4 py-1 bg-primary text-white cursor-pointer text-xl"
-            onClick={() => navigate(`/`)}
+            onClick={handleSubmit}
           >
             Submit
           </p>

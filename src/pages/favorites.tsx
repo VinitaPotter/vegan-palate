@@ -1,64 +1,44 @@
 import { useState, useEffect } from "react";
-import recipes from "../data/recipes.json";
-import RecipeCard from "../components/recipeCard";
-import type { Meal } from "../types/meal";
-import Search from "../components/search";
 import { useNavigate } from "react-router-dom";
+
+import { useFavoriteRecipes } from "../store/recipeSelector";
+import type { Meal } from "../types/meal";
+
+import RecipeCard from "../components/recipeCard";
+import Search from "../components/search";
 import Skeleton from "../components/skeleton";
 
-type MealCard = Pick<Meal, "id" | "title" | "image" | "readyInMinutes">;
-
 export default function Favorites() {
-  const navigate = useNavigate();
+  const myFavRecipes = useFavoriteRecipes();
 
   const [activeFilter, setActiveFilter] = useState<{
     name: string;
     index: number;
   }>({
-    name: "recent",
+    name: "all",
     index: 0,
   });
+  const myFilteredRecipes =
+    activeFilter.name === "all"
+      ? myFavRecipes
+      : myFavRecipes.filter((r) => r.dishTypes?.includes(activeFilter.name));
+  const navigate = useNavigate();
 
-  const [myFavRecipes, setMyFavRecipes] = useState<Meal[]>([]);
-  const [myFilteredRecipes, setFilteredRecipes] = useState<Meal[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  function getRecipes(): Promise<MealCard[]> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(recipes as Meal[]);
-      }, 500);
-    });
+  function handleFilterClick(name: string, index: number) {
+    if (name === activeFilter.name) return;
+    setLoading(true);
+    setTimeout(() => {
+      setActiveFilter({ name, index });
+      setLoading(false);
+    }, 500);
   }
-
   function handleOnSearch(query: string): void {
     console.log("handling search");
     navigate(`/search/?q=${query || activeFilter.name}`);
   }
 
-  useEffect(() => {
-    setLoading(true);
-    async function getdata() {
-      const data = await getRecipes();
-      setMyFavRecipes(data);
-      setFilteredRecipes(data);
-      setLoading(false);
-    }
-    getdata();
-  }, []);
-
-  useEffect(() => {
-    if (activeFilter.name === "recent") {
-      setFilteredRecipes((prev) => myFavRecipes);
-    } else {
-      const filtered_recipes = myFavRecipes.filter((r) => {
-        if (r.dishTypes.length && r.dishTypes.includes(activeFilter.name)) {
-          return r;
-        }
-        setFilteredRecipes((prev) => filtered_recipes);
-      });
-    }
-  }, [activeFilter.name]);
   return (
     <div>
       <div className="flex w-screen max-h-[92vh]">
@@ -73,7 +53,7 @@ export default function Favorites() {
             }}
           ></div>
           {[
-            "recent",
+            "all",
             "breakfast",
             "appetizer",
             "main course",
@@ -82,8 +62,9 @@ export default function Favorites() {
           ].map((item, index) => {
             return (
               <div
+                key={index}
                 className="pl-4 -ml-4 my-5 min-h-15  hover:text-primary rounded-l-2xl  cursor-pointer  capitalize z-20 relative flex items-center w-[stretch]"
-                onClick={() => setActiveFilter({ name: item, index })}
+                onClick={() => handleFilterClick(item, index)}
               >
                 {item}
               </div>
@@ -119,7 +100,7 @@ export default function Favorites() {
             </div>
           ) : (
             <div className="flex flex-wrap">
-              {Array.from(Array(8)).map((skeleton) => {
+              {Array.from(Array(8)).map(() => {
                 return (
                   <div className=" bg-white m-6 border px-4 py-2 border-gray-200 w-78 rounded-2xl h-96">
                     <Skeleton />
