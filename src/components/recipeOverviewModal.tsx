@@ -49,14 +49,16 @@ export default function RecipeOverviewModal({
             <div className="p-4 h-2/3 min-h-96 mx-4">
               <div className="mb-4 mt-4 ">
                 <p className="font-extrabold">Description</p>
-                <p>{meal.summary}</p>
+                <p>{meal?.summary || ""}</p>
               </div>
               <div className="bg-accent/40 rounded-2xl p-2 flex justify-between h-24 items-center mb-4">
                 <div className="flex  w-1/3 items-center">
                   <p className="text-3xl mr-4">⏲️</p>
                   <div>
                     <p className="text-sm text-gray-600">Time</p>
-                    <p className="font-medium text-lg">{meal.readyInMinutes}</p>
+                    <p className="font-medium text-lg">
+                      {meal?.readyInMinutes || 0}
+                    </p>
                   </div>
                 </div>
                 <div className="flex  w-1/3 items-center">
@@ -64,7 +66,7 @@ export default function RecipeOverviewModal({
                   <div>
                     <p className="text-sm text-gray-600">Ingredients</p>
                     <p className="font-medium text-lg">
-                      {meal.extendedIngredients?.length}
+                      {meal.extendedIngredients?.length || 0}
                     </p>
                   </div>
                 </div>
@@ -73,7 +75,7 @@ export default function RecipeOverviewModal({
                   <div>
                     <p className="text-sm text-gray-600">Calories</p>
                     <p className="font-medium text-lg">
-                      {meal.nutrition.calories}
+                      {meal.nutrition?.calories || 0}
                     </p>
                   </div>
                 </div>

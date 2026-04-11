@@ -35,7 +35,7 @@ export default function RecipeCard({ meal }: recipeCardProps) {
   return (
     <div className="min-w-full">
       <div className="bg-white ml-6 rounded-2xl">
-        <img src={meal.image} className="h-80 w-full object-cover" />
+        <img src={meal?.image} className="h-80 w-full object-cover" />
         <div className="flex -mt-10 justify-evenly ">
           {meal.veryHealthy ? (
             <img className="h-16 w-16" src={Healthy} />
@@ -57,26 +57,26 @@ export default function RecipeCard({ meal }: recipeCardProps) {
           <div className="flex justify-evenly pb-6 mb-6 border-b border-gray-200">
             <div className="px-2 text-center ">
               <p className="font-semibold text-sm text-gray-500 mb-3">Prep:</p>
-              <p>{calculateTime(meal.preparationMinutes)} </p>
+              <p>{calculateTime(meal.preparationMinutes || 0)} </p>
             </div>
             <div className="border border-gray-200"></div>
             <div className="px-2 text-center ">
               <p className="font-semibold text-sm text-gray-500 mb-3">
                 Cooking:
               </p>
-              <p>{calculateTime(meal.cookingMinutes)}</p>
+              <p>{calculateTime(meal.cookingMinutes || 0)}</p>
             </div>
             <div className="border border-gray-200"></div>
             <div className="px-2 text-center ">
               <p className="font-semibold text-sm text-gray-500 mb-3">Total:</p>
-              <p>{calculateTime(meal.readyInMinutes)}</p>
+              <p>{calculateTime(meal.readyInMinutes || 0)}</p>
             </div>
           </div>
           {/* Servings */}
           <div className="mb-6 pb-6 border-b border-gray-200">
             <p className="">
               Servings:{" "}
-              {Array.from(Array(meal.servings)).map((s, i) => {
+              {Array.from(Array(meal.servings)).map((_s, i) => {
                 return (
                   <span key={i + 1} className="text-2xl">
                     🍲{" "}
@@ -90,28 +90,52 @@ export default function RecipeCard({ meal }: recipeCardProps) {
             </p>
           </div>
           {/* Nutrition */}
-          <div>
-            <p className="mb-2">
-              <span className="w-[10ch] inline-block">🔥 Calories:</span>{" "}
-              {meal.nutrition.calories} kcal
-            </p>
-            <p className="mb-2">
-              <span className="w-[10ch] inline-block">🫘 Protein:</span>{" "}
-              {meal.nutrition.protein} gm
-            </p>
-            <p className="mb-2">
-              <span className="w-[10ch] inline-block">🍞 Carbs:</span>{" "}
-              {meal.nutrition.carbs} gm
-            </p>
-            <p className="mb-2">
-              <span className="w-[10ch] inline-block">🥑 Fat:</span>{" "}
-              {meal.nutrition.fat} gm
-            </p>
-            <p className="mb-2">
-              <span className="w-[10ch] inline-block">🥬 Fiber:</span>{" "}
-              {meal.nutrition.fiber} gm
-            </p>
-          </div>
+          {meal.nutrition ? (
+            <div>
+              {meal.nutrition.calories ? (
+                <p className="mb-2">
+                  <span className="w-[10ch] inline-block">🔥 Calories:</span>{" "}
+                  {meal.nutrition.calories} kcal
+                </p>
+              ) : (
+                <></>
+              )}
+              {meal.nutrition.protein ? (
+                <p className="mb-2">
+                  <span className="w-[10ch] inline-block">🫘 Protein:</span>{" "}
+                  {meal.nutrition.protein} gm
+                </p>
+              ) : (
+                <></>
+              )}
+              {meal.nutrition.carbs ? (
+                <p className="mb-2">
+                  <span className="w-[10ch] inline-block">🍞 Carbs:</span>{" "}
+                  {meal.nutrition.carbs} gm
+                </p>
+              ) : (
+                <></>
+              )}
+              {meal.nutrition.fat ? (
+                <p className="mb-2">
+                  <span className="w-[10ch] inline-block">🥑 Fat:</span>{" "}
+                  {meal.nutrition.fat} gm
+                </p>
+              ) : (
+                <></>
+              )}
+              {meal.nutrition.fiber ? (
+                <p className="mb-2">
+                  <span className="w-[10ch] inline-block">🥬 Fiber:</span>{" "}
+                  {meal.nutrition.fiber} gm
+                </p>
+              ) : (
+                <></>
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

@@ -67,7 +67,7 @@ export default function RecipeDetails() {
   }
 
   function getUserEmoji(userName: string): string {
-    if (userName.length > foodEmojis.length) {
+    if (userName && userName.length > foodEmojis.length) {
       return foodEmojis[0];
     }
     return foodEmojis[userName.length];
@@ -115,11 +115,13 @@ export default function RecipeDetails() {
                   {mealRecipe.title}
                 </p>
                 <span>Recipe by:</span>
-                <a href={mealRecipe.sourceUrl}>
-                  <span> {mealRecipe.sourceName}</span>
+                <a href={mealRecipe?.sourceUrl}>
+                  <span> {mealRecipe?.sourceName || "Unknown"}</span>
                 </a>
                 <p className="text-sm text-primary">
-                  {mealRecipe.aggregateLikes} people 👍🏼 this
+                  {mealRecipe.aggregateLikes
+                    ? `${mealRecipe.aggregateLikes} people 👍🏼 this`
+                    : ""}
                 </p>
 
                 <div className="mt-6">
@@ -131,13 +133,13 @@ export default function RecipeDetails() {
                           return <span>⭐</span>;
                         })}
                       </p>
-                      <p>{topUserReview.testimonial}</p>
+                      <p>{topUserReview?.testimonial}</p>
                       <p>
                         <span className="mr-2">
                           {getUserEmoji(topUserReview.user)}
                         </span>
                         <span className="text-primary italic">
-                          {topUserReview.user}
+                          {topUserReview?.user || "Unknown"}
                         </span>
                       </p>
                     </div>
@@ -152,7 +154,7 @@ export default function RecipeDetails() {
                     Ingredients:
                   </span>
                   <ol className="list-none ml-5">
-                    {mealRecipe.extendedIngredients.map((ing) => {
+                    {mealRecipe?.extendedIngredients?.map((ing) => {
                       return (
                         <li className="mb-1" key={ing.id}>
                           <span className="mr-2 text-2xl">{ing.emoji}</span>
@@ -168,25 +170,20 @@ export default function RecipeDetails() {
                     })}
                   </ol>
                 </div>
-                <div className="items-center ">
-                  {/* <img
-                    src={mealRecipe.image}
-                    className="h-80 rounded-2xl drop-shadow-sm drop-shadow-primary"
-                  /> */}
-                </div>
+                <div className="items-center "></div>
               </div>
               <div className="mb-4 flex">
                 <p className="font-semibold text-lg w-[10ch]">Directions:</p>
 
                 <ol className="list-none ml-5">
-                  {mealRecipe.analyzedInstructions.map((instruction) => {
+                  {mealRecipe?.analyzedInstructions?.map((instruction) => {
                     return (
                       <li key={instruction.number}>
                         <span className="bg-tertiary p-0.5 -mr-3.5 rounded-full w-7 h-7 text-center inline-block relative z-10 ">
-                          {instruction.number}
+                          {instruction?.number}
                         </span>
                         <span className="pb-10 inline-block border-l-secondary border-dashed border-l pl-7">
-                          {instruction.step}
+                          {instruction?.step}
                         </span>
                       </li>
                     );
