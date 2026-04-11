@@ -1,54 +1,33 @@
 import { useEffect, useState } from "react";
 import Search from "../components/search";
 import { useSearchParams } from "react-router";
-import recipes from "../data/recipes.json";
+import ALL_RECIPES from "../data/recipes.json";
 import RecipeCard from "../components/recipeCard";
 
-import type { Meal } from "../types/meal";
 import Skeleton from "../components/skeleton";
-
-type MealSearch = Pick<
-  Meal,
-  | "id"
-  | "title"
-  | "summary"
-  | "image"
-  | "glutenFree"
-  | "dishTypes"
-  | "instructions"
->[];
 
 export default function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchedRecipes, setSearchedRecipes] = useState<MealSearch>();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const query = searchParams.get("q") || "";
 
-  function handleQueryChange(q) {
-    setSearchParams({ q: q });
-    searchRecipes();
+  function handleQueryChange(q: string) {
+    setSearchParams({ q: q.trim() }, { replace: true });
   }
 
-  function searchRecipes() {
-    setLoading(true);
-    if (query) {
-      const sr = recipes.filter((r) =>
-        r.title.replace(/ /g, "").toLocaleLowerCase().includes(query),
-      );
-      setSearchedRecipes((prev) => {
-        return [...sr];
-      });
-    } else {
-      setSearchedRecipes((prev) => {
-        return [];
-      });
-    }
-    setTimeout(() => {
+  const searchedRecipes = query
+    ? [...ALL_RECIPES].filter((r) =>
+        (r.title.trim() + r.dishTypes.toString())
+          .toLocaleLowerCase()
+          .includes(query.trim().toLocaleLowerCase()),
+      )
+    : [];
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
     }, 300);
-  }
-  useEffect(() => {
-    searchRecipes();
+    return () => clearTimeout(timer);
   }, [query]);
 
   return (
@@ -64,7 +43,7 @@ export default function SearchPage() {
         </div>
       ) : loading ? (
         <div className="flex flex-wrap max-h-[75vh] mt-6 ">
-          {Array.from(Array(8)).map((skeleton) => {
+          {Array.from(Array(8)).map(() => {
             return (
               <div className="mx-6 p-6 bg-white border px-4 py-2 border-gray-200 w-78 rounded-2xl h-96">
                 <Skeleton />
@@ -77,7 +56,7 @@ export default function SearchPage() {
           {searchedRecipes.map((recipe, index) => {
             return (
               <RecipeCard
-                key={index + 1}
+                key={recipe.id}
                 index={index}
                 meal={recipe}
                 rotate={false}
