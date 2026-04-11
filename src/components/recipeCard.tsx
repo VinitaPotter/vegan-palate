@@ -2,6 +2,7 @@ import RecipeOverviewModal from "./recipeOverviewModal";
 import { useState } from "react";
 import type { Meal } from "../types/meal";
 import Skeleton from "./skeleton";
+import PlaceHolder from "../assets/placeholder.jpg";
 
 type MealCard = Pick<
   Meal,
@@ -35,7 +36,7 @@ export default function RecipeCard({
     <div>
       <div
         onClick={handleCardVisibility}
-        className={`bg-white  border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${rotate ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow" : "m-6 h-112.5 border"}`}
+        className={`bg-white group border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${rotate ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow" : "m-6 h-112.5 border"}`}
         style={
           rotate
             ? {
@@ -49,9 +50,9 @@ export default function RecipeCard({
             <div className="h-10 ">
               {rotate ? (
                 <p className="text-md mt-2">
-                  <span className="text-3xl -rotate-12 inline-block absolute -top-2.5 -left-2.5">
+                  <span className="text-[1px] group-hover:text-5xl transition-all duration-500 text-3xl -rotate-12 inline-block absolute -top-2.5 -left-2.5">
                     🫶🏼
-                  </span>{" "}
+                  </span>
                   <span className="playful-font ">
                     Loved by {meal.aggregateLikes}
                   </span>
@@ -64,7 +65,7 @@ export default function RecipeCard({
             </div>
             <div className="text-xl mb-4 h-12">{meal.title}</div>
             <img
-              src={meal.image}
+              src={meal.image || PlaceHolder}
               alt={meal.title}
               className="h-40 w-68 object-cover mx-auto mb-4"
             />

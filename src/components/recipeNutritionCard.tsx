@@ -1,7 +1,7 @@
-import { useState } from "react";
 import Cheap from "../assets/cheap.png";
 import Gluten from "../assets/gluten_free.png";
 import Healthy from "../assets/healthy.png";
+import PlaceHolder from "../assets/placeholder.jpg";
 
 import type { Meal } from "../types/meal";
 
@@ -35,7 +35,10 @@ export default function RecipeCard({ meal }: recipeCardProps) {
   return (
     <div className="min-w-full">
       <div className="bg-white ml-6 rounded-2xl">
-        <img src={meal?.image} className="h-80 w-full object-cover" />
+        <img
+          src={meal?.image || PlaceHolder}
+          className="h-80 w-full object-cover"
+        />
         <div className="flex -mt-10 justify-evenly ">
           {meal.veryHealthy ? (
             <img className="h-16 w-16" src={Healthy} />

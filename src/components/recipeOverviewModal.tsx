@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Meal } from "../types/meal";
-
+import PlaceHolder from "../assets/placeholder.jpg";
 type MealDetails = Pick<
   Meal,
   | "id"
@@ -37,7 +37,7 @@ export default function RecipeOverviewModal({
         <div
           className="ticket-mask shadow-md w-1/3 ml-auto mr-auto mt-20 rounded-xl bg-cover bg-center "
           style={{
-            backgroundImage: `linear-gradient(to top, #fff, #fff, transparent), url(${meal.image})`,
+            backgroundImage: `linear-gradient(to top, #fff, #fff, transparent), url(${meal.image || PlaceHolder})`,
           }}
           onClick={(e) => e.stopPropagation()}
         >

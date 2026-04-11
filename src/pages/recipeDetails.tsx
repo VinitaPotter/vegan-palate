@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import recipes from "../data/recipes.json";
+import ALL_RECIPES from "../data/recipes.json";
 
 import confetti from "canvas-confetti";
 
 import RecipeDescriptionCard from "../components/recipeNutritionCard";
 import Related from "../components/related";
 import ReviewDialogue from "../components/reviewDialogue";
-
+import PlaceHolder from "../assets/placeholder.jpg";
 import type { Meal } from "../types/meal";
 import { useRecipeStore } from "../store/recipesStore";
 
@@ -76,9 +76,9 @@ export default function RecipeDetails() {
     function getDetails() {
       let currentRecipe;
       if (recipeId) {
-        currentRecipe = recipes.find((r) => r.id === recipeId);
+        currentRecipe = ALL_RECIPES.find((r) => r.id === recipeId);
       } else {
-        currentRecipe = recipes[recipeId];
+        currentRecipe = ALL_RECIPES[recipeId];
       }
       setMealRecipe(currentRecipe as Meal);
     }
@@ -103,7 +103,7 @@ export default function RecipeDetails() {
         <div
           className="bg-bottom"
           style={{
-            backgroundImage: `linear-gradient(to top,  transparent, #fff), url(${mealRecipe.image})`,
+            backgroundImage: `linear-gradient(to top,  transparent, #fff), url(${mealRecipe.image || PlaceHolder})`,
             backgroundAttachment: "fixed",
           }}
         >
@@ -153,45 +153,71 @@ export default function RecipeDetails() {
                   <span className="font-semibold text-lg w-[10ch]">
                     Ingredients:
                   </span>
-                  <ol className="list-none ml-5">
-                    {mealRecipe?.extendedIngredients?.map((ing) => {
-                      return (
-                        <li className="mb-1" key={ing.id}>
-                          <span className="mr-2 text-2xl">{ing.emoji}</span>
-                          <span className="mr-1 ">
-                            {ing.amount} {ing.unit} {ing.name}
-                          </span>
-                          <span></span>
-                          <span className=" text-gray-700 ">
-                            {ing.preparation ? `(${ing.preparation})` : ""}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ol>
+                  {mealRecipe?.extendedIngredients.length ? (
+                    <ol className="list-none ml-5">
+                      {mealRecipe?.extendedIngredients?.map((ing) => {
+                        return (
+                          <li className="mb-1" key={ing.id}>
+                            <span className="mr-2 text-2xl">{ing.emoji}</span>
+                            <span className="mr-1 ">
+                              {ing.amount} {ing.unit} {ing.name}
+                            </span>
+                            <span></span>
+                            <span className=" text-gray-700 ">
+                              {ing.preparation ? `(${ing.preparation})` : ""}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  ) : (
+                    <div>
+                      <a href="mailto:someone@example.com">
+                        <span className="text-2xl mr-2">🏚️</span>
+                        <span className="italic text-blue-600">
+                          Report broken content!
+                        </span>{" "}
+                      </a>
+                    </div>
+                  )}
                 </div>
                 <div className="items-center "></div>
               </div>
               <div className="mb-4 flex">
                 <p className="font-semibold text-lg w-[10ch]">Directions:</p>
 
-                <ol className="list-none ml-5">
-                  {mealRecipe?.analyzedInstructions?.map((instruction) => {
-                    return (
-                      <li key={instruction.number}>
-                        <span className="bg-tertiary p-0.5 -mr-3.5 rounded-full w-7 h-7 text-center inline-block relative z-10 ">
-                          {instruction?.number}
-                        </span>
-                        <span className="pb-10 inline-block border-l-secondary border-dashed border-l pl-7">
-                          {instruction?.step}
-                        </span>
-                      </li>
-                    );
-                  })}
-                  <p className="items-center align-middle">
-                    <span className="text-3xl mr-2">✅</span> Enjoy!
-                  </p>
-                </ol>
+                {mealRecipe.analyzedInstructions?.length ||
+                mealRecipe.instructions ? (
+                  <ol className="list-none ml-5">
+                    {(mealRecipe?.analyzedInstructions.length
+                      ? mealRecipe.analyzedInstructions
+                      : [{ number: 1, step: mealRecipe.instructions }]
+                    )?.map((instruction) => {
+                      return (
+                        <li key={instruction.number} className="flex">
+                          <span className="bg-tertiary p-0.5 -mr-3.5 rounded-full w-7 h-7 text-center inline-block relative z-10 ">
+                            {instruction?.number}
+                          </span>
+                          <span className="pb-10 inline-block border-l-secondary border-dashed border-l pl-7 max-w-[85%]">
+                            {instruction?.step}
+                          </span>
+                        </li>
+                      );
+                    })}
+                    <p className="items-center align-middle">
+                      <span className="text-3xl mr-2">✅</span> Enjoy!
+                    </p>
+                  </ol>
+                ) : (
+                  <div>
+                    <a href="mailto:someone@example.com">
+                      <span className="text-2xl mr-2">🏚️</span>
+                      <span className="italic text-blue-600">
+                        Report broken content!
+                      </span>{" "}
+                    </a>
+                  </div>
+                )}
               </div>
               <p
                 className="bg-primary text-semibold text-xl text-white cursor-pointer hover:scale-101 duarion-1000 p-2 rounded-lg items-center text-center hover:shadow-lg w-56 my-14 ml-[10ch]"

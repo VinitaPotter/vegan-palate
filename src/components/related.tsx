@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import PlaceHolder from "../assets/placeholder.jpg";
 import recipes from "../data/recipes.json";
 import type { Meal } from "../types/meal";
 
@@ -61,7 +61,7 @@ export default function Related({ types, recipeId }: RelatedProps) {
             return (
               <div onClick={() => navigateToRecipe(t.id)}>
                 <img
-                  src={t.image}
+                  src={t.image || PlaceHolder}
                   className="w-50 h-50 object-cover rounded-full drop-shadow-md drop-shadow-black mb-5 hover:scale-110 duration-1000 transition-all cursor-pointer mx-auto"
                 />
                 <p className="text-center text-xl">{t.title}</p>
