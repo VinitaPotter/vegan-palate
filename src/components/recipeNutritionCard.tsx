@@ -37,7 +37,7 @@ export default function RecipeCard({ meal }: recipeCardProps) {
       <div className="bg-white ml-6 rounded-2xl">
         <img
           src={meal?.image || PlaceHolder}
-          className="h-80 w-full object-cover"
+          className="h-80 w-full object-cover rounded-t-2xl"
         />
         <div className="flex -mt-10 justify-evenly ">
           {meal.veryHealthy ? (
@@ -76,7 +76,7 @@ export default function RecipeCard({ meal }: recipeCardProps) {
             </div>
           </div>
           {/* Servings */}
-          <div className="mb-6 pb-6 border-b border-gray-200">
+          <div>
             <p className="">
               Servings:{" "}
               {Array.from(Array(meal.servings)).map((_s, i) => {
@@ -87,14 +87,18 @@ export default function RecipeCard({ meal }: recipeCardProps) {
                 );
               })}
             </p>
-            <p className="text-sm text-gray-600 ">
-              Serving size: {meal.weightPerServing.amount}
-              {meal.weightPerServing.unit} each
-            </p>
+            {meal.weightPerServing?.amount ? (
+              <p className="text-sm text-gray-600 ">
+                Serving size: {meal.weightPerServing.amount}
+                {meal.weightPerServing.unit} each
+              </p>
+            ) : (
+              <></>
+            )}
           </div>
           {/* Nutrition */}
           {meal.nutrition ? (
-            <div>
+            <div className="mt-6 pt-6 border-t border-gray-200">
               {meal.nutrition.calories ? (
                 <p className="mb-2">
                   <span className="w-[10ch] inline-block">🔥 Calories:</span>{" "}

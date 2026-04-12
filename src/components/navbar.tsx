@@ -1,36 +1,57 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Logo from "../assets/logo_yellow_bg.png";
 export default function Navbar() {
   return (
     <div className="flex  justify-between bg-accent w-full h-16 border-b border-b-gray-200">
       <p className="w-1/5 cursor-pointer">
-        <Link to={`/`}>
+        <NavLink to={`/`}>
           <img
             src={Logo}
             width="150"
             height="55"
             className="bg-transparent h-16 object-cover"
           />
-        </Link>
+        </NavLink>
       </p>
       <div className="flex justify-around w-1/3 p-4">
-        <Link to={"/favorites"}>
-          <p className="cursor-pointer">My recipes</p>
-        </Link>
-        <Link to={"/resources"}>
-          <p className="cursor-pointer">Helpful resources</p>
-        </Link>
-        <Link to={"/events"}>
-          <p className="cursor-pointer">Events</p>
-        </Link>
+        <NavLink
+          to={"/favorites"}
+          className={({ isActive }) =>
+            isActive
+              ? "bg-white  rounded-t-2xl pb-8 pt-4 px-6"
+              : "cursor-pointer pb-8 pt-4 px-6"
+          }
+        >
+          <p>My recipes</p>
+        </NavLink>
+        <NavLink
+          to={"/resources"}
+          className={({ isActive }) =>
+            isActive
+              ? "bg-white  rounded-t-2xl pb-8 pt-4 px-6"
+              : "cursor-pointer pb-8 pt-4 px-6"
+          }
+        >
+          <p>Helpful resources</p>
+        </NavLink>
+        <NavLink
+          to={"/events"}
+          className={({ isActive }) =>
+            isActive
+              ? "bg-white  rounded-t-2xl pb-8 pt-4 px-6"
+              : "cursor-pointer pb-8 pt-4 px-6"
+          }
+        >
+          <p>Events</p>
+        </NavLink>
       </div>
       <div className="p-4">
-        <Link to={"/search"}>
+        <NavLink to={"/search"}>
           <p className=" border py-1 px-4 rounded-xl hover:scale-105 hover:bg-primary hover:text-white cursor-pointer flex items-center">
             Search
           </p>
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

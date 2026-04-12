@@ -67,7 +67,7 @@ export default function RecipeDetails() {
   }
 
   function getUserEmoji(userName: string): string {
-    if (userName && userName.length > foodEmojis.length) {
+    if (userName && userName.length >= foodEmojis.length) {
       return foodEmojis[0];
     }
     return foodEmojis[userName.length];
@@ -111,7 +111,7 @@ export default function RecipeDetails() {
             {/* Left section */}
             <div className="bg-white p-6 rounded-2xl w-3/4 text-lg justify-items-start mt-10">
               <div className="bg-tertiary/50 rounded-2xl p-6 w-full mb-14">
-                <p className="font-thin text-3xl heading-font">
+                <p className="font-thin text-3xl heading-font ">
                   {mealRecipe.title}
                 </p>
                 <span>Recipe by:</span>
@@ -134,8 +134,8 @@ export default function RecipeDetails() {
                         })}
                       </p>
                       <p>{topUserReview?.testimonial}</p>
-                      <p>
-                        <span className="mr-2">
+                      <p className="mt-5 flex items-center">
+                        <span className="mr-2 bg-accent border border-primary px-2.5 py-1 rounded-full ">
                           {getUserEmoji(topUserReview.user)}
                         </span>
                         <span className="text-primary italic">
@@ -160,7 +160,7 @@ export default function RecipeDetails() {
                           <li className="mb-1" key={ing.id}>
                             <span className="mr-2 text-2xl">{ing.emoji}</span>
                             <span className="mr-1 ">
-                              {ing.amount} {ing.unit} {ing.name}
+                              {ing?.amount || ""} {ing?.unit || ""} {ing?.name}
                             </span>
                             <span></span>
                             <span className=" text-gray-700 ">

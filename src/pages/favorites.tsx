@@ -41,7 +41,7 @@ export default function Favorites() {
 
   return (
     <div>
-      <div className="flex w-screen max-h-[92vh]">
+      <div className="flex w-screen max-h-[92vh] overflow-hidden">
         <div className="min-w-[2/5] pl-10 py-10 border-r border-gray-200 bg-accent relative z-0">
           <p className="text-6xl playful-font mb-20 -rotate-2">
             Make <span className="text-primary">'em</span> again!
