@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Meal } from "../types/meal";
 import PlaceHolder from "../assets/placeholder.jpg";
+import { useRecipeStore } from "../store/recipesStore";
 type MealDetails = Pick<
   Meal,
   | "id"
@@ -24,6 +25,8 @@ export default function RecipeOverviewModal({
   handleClickOutside,
   meal,
 }: overviewProps) {
+  const favoriteIds = useRecipeStore((state) => state.favoriteIds);
+  const isFav = favoriteIds.includes(meal.id);
   return (
     <div>
       <div
@@ -35,7 +38,7 @@ export default function RecipeOverviewModal({
         onClick={() => handleClickOutside()}
       >
         <div
-          className="ticket-mask shadow-md w-1/3 ml-auto mr-auto mt-20 rounded-xl bg-cover bg-bottom bg-fixed"
+          className="ticket-mask shadow-md w-1/3 ml-auto mr-auto mt-20 rounded-xl bg-cover bg-center bg-fixed "
           style={{
             backgroundImage: `linear-gradient(to top, #fff, #fff, transparent), url(${meal.image || PlaceHolder})`,
           }}
@@ -96,7 +99,7 @@ export default function RecipeOverviewModal({
               <Link to={`/recipe/${meal.id}`}>
                 <div className="mb-8">
                   <p className="bg-primary text-semibold text-xl text-white cursor-pointer hover:scale-101 duarion-1000 p-2 rounded-lg items-center text-center hover:shadow-lg">
-                    Make this recipe →
+                    {isFav ? "Round two, chef?" : "Make this recipe →"}
                   </p>
                 </div>
               </Link>

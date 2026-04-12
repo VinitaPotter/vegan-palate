@@ -12,7 +12,10 @@ import type { Meal } from "../types/meal";
 import { useRecipeStore } from "../store/recipesStore";
 
 export default function RecipeDetails() {
+  const params = useParams();
+  const recipeId = Number(params.id);
   const favoriteIds = useRecipeStore((state) => state.favoriteIds);
+  const isFav = favoriteIds.includes(recipeId);
   const fire = () => {
     confetti({
       particleCount: 120,
@@ -20,8 +23,7 @@ export default function RecipeDetails() {
       origin: { y: 0.6 },
     });
   };
-  const params = useParams();
-  const recipeId = Number(params.id);
+
   interface topReview {
     user: string;
     rating: number;
@@ -56,7 +58,7 @@ export default function RecipeDetails() {
   function celebrate(): void {
     fire();
     setTimeout(() => {
-      if (!favoriteIds.includes(recipeId)) setShowDialogue(true);
+      if (!isFav) setShowDialogue(true);
     }, 1000);
   }
   function getTopReview(): void {
@@ -101,7 +103,7 @@ export default function RecipeDetails() {
       )}
       {mealRecipe && Object.keys(mealRecipe).length ? (
         <div
-          className="bg-bottom"
+          className="bg-center bg-fixed object-center"
           style={{
             backgroundImage: `linear-gradient(to top,  transparent, #fff), url(${mealRecipe.image || PlaceHolder})`,
             backgroundAttachment: "fixed",
@@ -109,7 +111,7 @@ export default function RecipeDetails() {
         >
           <div className="flex w-full justify-between px-6 ">
             {/* Left section */}
-            <div className="bg-white p-6 rounded-2xl w-3/4 text-lg justify-items-start mt-10">
+            <div className="bg-white p-6 rounded-2xl w-3/4 text-lg justify-items-start my-5">
               <div className="bg-tertiary/50 rounded-2xl p-6 w-full mb-14">
                 <p className="font-thin text-3xl heading-font ">
                   {mealRecipe.title}
@@ -176,7 +178,7 @@ export default function RecipeDetails() {
                         <span className="text-2xl mr-2">🏚️</span>
                         <span className="italic text-blue-600">
                           Report broken content!
-                        </span>{" "}
+                        </span>
                       </a>
                     </div>
                   )}
@@ -214,7 +216,7 @@ export default function RecipeDetails() {
                       <span className="text-2xl mr-2">🏚️</span>
                       <span className="italic text-blue-600">
                         Report broken content!
-                      </span>{" "}
+                      </span>
                     </a>
                   </div>
                 )}
@@ -223,15 +225,15 @@ export default function RecipeDetails() {
                 className="bg-primary text-semibold text-xl text-white cursor-pointer hover:scale-101 duarion-1000 p-2 rounded-lg items-center text-center hover:shadow-lg w-56 my-14 ml-[10ch]"
                 onClick={celebrate}
               >
-                I made it →
+                {isFav ? "The classic returns! 🔥" : "I made it →"}
               </p>
             </div>
             {/* Right section / card */}
-            <div className="w-1/4 justify-items-end mt-10">
+            <div className="w-1/4 justify-items-end my-5">
               <RecipeDescriptionCard meal={mealRecipe} />
             </div>
           </div>
-          <Related types={mealRecipe.dishTypes} recipeId={mealRecipe.id} />
+          <Related mealTypes={mealRecipe.dishTypes} recipeId={mealRecipe.id} />
         </div>
       ) : (
         <></>

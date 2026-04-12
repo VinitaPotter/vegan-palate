@@ -285,10 +285,13 @@ export default function Resources() {
     type: string;
   }
   return (
-    <div className="columns-4 mt-20 relative">
+    <div className="columns-4 p-5 relative bg-linear-to-t from-accent from-70 via-tertiary  via-30 to-white to-0">
       {resourceData.map((rd) => {
         return (
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-5 break-inside-avoid drop-shadow-2xl ">
+          <div
+            className="bg-white border border-gray-200 rounded-2xl p-6 mb-5 break-inside-avoid  cursor-pointer "
+            onClick={() => window.open(rd.source)}
+          >
             <div className="heading-font text-2xl mb-10 text-primary">
               {rd.name}
             </div>
@@ -311,10 +314,7 @@ export default function Resources() {
                 <iframe
                   src={rd.source}
                   title="YouTube video player"
-                  frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
                 ></iframe>
               </div>
             ) : (

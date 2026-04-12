@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PlaceHolder from "../assets/placeholder.jpg";
-import recipes from "../data/recipes.json";
+import ALL_RECIPES from "../data/recipes.json";
 import type { Meal } from "../types/meal";
 
 type RelatedMeals = Pick<
@@ -10,10 +10,10 @@ type RelatedMeals = Pick<
 >[];
 
 type RelatedProps = {
-  types: [];
+  mealTypes: string[];
   recipeId: number;
 };
-export default function Related({ types, recipeId }: RelatedProps) {
+export default function Related({ mealTypes, recipeId }: RelatedProps) {
   const [relatedItems, setRelatedItems] = useState<RelatedMeals>([]);
 
   const navigate = useNavigate();
@@ -26,32 +26,31 @@ export default function Related({ types, recipeId }: RelatedProps) {
   function getRelatedMeals(relatedType: []): void {
     const tempArray: RelatedMeals = [];
 
-    const currentRecipe = recipes.findIndex((r) => r.id === recipeId);
-    console.log({ currentRecipe });
-    const otherRecipes = JSON.parse(JSON.stringify(recipes));
-    otherRecipes.splice(currentRecipe, 1);
+    const currentRecipeId = ALL_RECIPES.findIndex((r) => r.id === recipeId);
+    const otherRecipes = [...ALL_RECIPES];
+    otherRecipes.splice(currentRecipeId, 1);
 
-    // if (relatedType && relatedType.length) {
-    //   relatedType.forEach((type) => {
-    //     otherRecipes.forEach((recipe, index) => {
-    //       if (index < 3 && recipe?.dishTypes?.includes(type)) {
-    //         tempArray.push(recipe);
-    //       }
-    //     });
-    //   });
-    // } else {
-    //   tempArray.push(...otherRecipes.slice(0, 2));
-    // }
-    tempArray.push(...otherRecipes.slice(0, 3));
+    if (relatedType && relatedType.length) {
+      otherRecipes.forEach((recipe) => {
+        if (
+          recipe?.dishTypes?.includes(relatedType[0]) &&
+          tempArray.length < 3
+        ) {
+          tempArray.push(recipe as Meal);
+        }
+      });
+    } else {
+      otherRecipes.slice(0, 3).map((r) => tempArray.push(r as Meal));
+    }
     setRelatedItems(tempArray);
   }
 
   useEffect(() => {
-    getRelatedMeals(types);
+    getRelatedMeals(mealTypes);
   }, [recipeId]);
 
   return (
-    <div className="flex justify-between bg-accent/80 p-10">
+    <div className="flex justify-between bg-linear-to-t  from-accent from-45% via-accent/80 to-transparent p-10 ">
       <div className="text-5xl text-center w-1/3 heading-font m-auto">
         Related Recipes
       </div>

@@ -628,7 +628,7 @@ export default function Events() {
   }
 
   return (
-    <div>
+    <div className="m-20 bg-linear-to-t from-accent from-70 via-tertiary  via-30 to-white to-0">
       {loading ? (
         <div className="absolute z-100000 left-[50%] top-[50%]">
           <p className="animate-spin text-3xl">🌱</p>
@@ -639,9 +639,9 @@ export default function Events() {
       )}
       <MapContainer
         center={[51.505, -0.09]}
-        zoom={2}
+        zoom={6}
         scrollWheelZoom={true}
-        style={{ height: "90vh", width: "100%" }}
+        style={{ height: "70vh", width: "100%" }}
       >
         <TileLayer
           attribution='&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

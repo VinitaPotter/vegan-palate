@@ -12,7 +12,11 @@ export default function SearchPage() {
   const query = searchParams.get("q") || "";
 
   function handleQueryChange(q: string) {
+    setLoading(true);
     setSearchParams({ q: q.trim() }, { replace: true });
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
   }
 
   const searchedRecipes = query
@@ -26,7 +30,7 @@ export default function SearchPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 300);
+    }, 500);
     return () => clearTimeout(timer);
   }, [query]);
 
@@ -35,13 +39,13 @@ export default function SearchPage() {
       <div className="text-center mt-10">
         <Search query={query} onSearch={handleQueryChange} />
       </div>
-      {!query && !searchedRecipes?.length && !loading ? (
+      {!query && !searchedRecipes?.length ? (
         <div>
           <div className="playful-font text-2xl text-center mt-20">
             What would you like to eat today, chef!?
           </div>
         </div>
-      ) : loading ? (
+      ) : loading && query ? (
         <div className="flex flex-wrap max-h-[75vh] mt-6 ">
           {Array.from(Array(8)).map(() => {
             return (
