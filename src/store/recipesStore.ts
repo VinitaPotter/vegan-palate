@@ -19,7 +19,7 @@ export const useRecipeStore = create<RecipesState>((set, get) => ({
     const store = transaction.objectStore("favorites");
     if (isFav) {
       store.delete(id);
-      set({ favoriteIds: favoriteIds.filter((f) => f === id) });
+      set({ favoriteIds: favoriteIds.filter((f) => f !== id) });
     } else {
       store.put({ id });
       set({ favoriteIds: [...favoriteIds, id] });

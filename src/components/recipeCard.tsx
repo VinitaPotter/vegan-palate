@@ -3,7 +3,7 @@ import { useState } from "react";
 import type { Meal } from "../types/meal";
 import Skeleton from "./skeleton";
 import PlaceHolder from "../assets/placeholder.jpg";
-
+import { useRecipeStore } from "../store/recipesStore";
 type MealCard = Pick<
   Meal,
   | "id"
@@ -28,15 +28,25 @@ export default function RecipeCard({
 }: recipeCardProps) {
   const [cardVisible, setCardVisible] = useState<boolean>(false);
 
+  const toggleFavorite = useRecipeStore((state) => state.toggleFavorite);
+  const favoriteIds = useRecipeStore((state) => state.favoriteIds);
+
+  const isFav = favoriteIds.includes(meal.id);
+
   function handleCardVisibility() {
     return setCardVisible((prev) => !prev);
+  }
+
+  function handleUnfavorite(event: Event) {
+    event.stopPropagation();
+    toggleFavorite(meal.id);
   }
 
   return (
     <div>
       <div
         onClick={handleCardVisibility}
-        className={`bg-white group border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${rotate ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow" : "m-6 h-112.5 border"}`}
+        className={`bg-white group relative border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${rotate ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow" : "m-6 h-112.5 border"}`}
         style={
           rotate
             ? {
@@ -50,11 +60,11 @@ export default function RecipeCard({
             <div className="h-10 ">
               {rotate ? (
                 <p className="text-md mt-2">
-                  <span className="text-[1px] group-hover:text-5xl transition-all duration-500 text-3xl -rotate-12 inline-block absolute -top-2.5 -left-2.5">
+                  <span className="text-[1px] group-hover:text-5xl transition-all duration-500 text-3xl rotate-12 inline-block absolute -top-2.5 -right-2.5">
                     🫶🏼
                   </span>
                   <span className="playful-font ">
-                    Loved by {meal.aggregateLikes}
+                    ♥️ Loved by {meal.aggregateLikes}
                   </span>
                 </p>
               ) : (
@@ -63,7 +73,24 @@ export default function RecipeCard({
                 </span>
               )}
             </div>
-            <div className="text-xl mb-4 h-12">{meal.title}</div>
+            <div className="text-xl mb-4 h-12 flex">
+              <span>{meal.title}</span>
+              {isFav ? (
+                <div className="group/tooltip" onClick={handleUnfavorite}>
+                  <span className="absolute top-0 right-0 p-2 group-hover/tooltip:invisible">
+                    ♥️
+                  </span>
+                  <p className="absolute top-0 right-0 p-2 group-hover/tooltip:visible invisible">
+                    <span className="text-xs bg-white border mr-3 px-2 py-1 border-gray-200 rounded-xl">
+                      Unfavorite?
+                    </span>
+                    <span className="">💔</span>
+                  </p>
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
             <img
               src={meal.image || PlaceHolder}
               alt={meal.title}
