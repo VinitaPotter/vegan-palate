@@ -157,3 +157,35 @@
   border-radius: 10px 20px 20px 10px;
   box-shadow: 7px -7px 0 #fff;
 }
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: true;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 1turn;
+  }
+}
+
+.profile {
+  border: 5px solid transparent;
+  background:
+    linear-gradient(white) padding-box,
+    conic-gradient(
+        from var(--angle),
+        var(--color-tertiary),
+        var(--color-accent),
+        var(--color-tertiary)
+      )
+      border-box;
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.profile:hover,
+.profile:focus-visible {
+  animation-play-state: running;
+}
