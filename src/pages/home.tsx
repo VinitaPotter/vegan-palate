@@ -11,7 +11,7 @@ export default function Home() {
         <h1 className="text-5xl text-secondary heading-font font-bold">
           Best trending now..
         </h1>
-        <Link to={"search"}>
+        <Link to={"explore"}>
           <div className="cursor-pointer relative">
             <p className="highlight-container  "></p>
             <p className="text-2xl relative z-20 mb-5 animate-bounce">

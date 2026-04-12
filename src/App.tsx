@@ -9,6 +9,7 @@ import Favorites from "./pages/favorites";
 import SearchPage from "./pages/searchPage";
 import Resources from "./pages/resources";
 import Events from "./pages/events";
+import Explore from "./pages/explore";
 
 const Layout = () => (
   <>
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: "search", element: <SearchPage /> },
       { path: "resources", element: <Resources /> },
       { path: "events", element: <Events /> },
+      { path: "explore", element: <Explore /> },
     ],
   },
 ]);
