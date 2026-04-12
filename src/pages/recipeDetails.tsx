@@ -59,7 +59,7 @@ export default function RecipeDetails() {
     fire();
     setTimeout(() => {
       if (!isFav) setShowDialogue(true);
-    }, 1000);
+    }, 500);
   }
   function getTopReview(): void {
     const foundReview = mealRecipe?.reviews.find(

@@ -26,17 +26,26 @@ export default function ReviewDialogue({
   }
 
   function handleSubmit(): void {
-    if (addToFav) {
+    if (!rating) {
+      alert("Please add your rating!");
+      return;
+    } else if (addToFav) {
       toggleFavorites(recipeId);
       setTimeout(() => {
         navigate(`/favorites`);
-      }, 500);
+      }, 200);
     } else {
-      console.log("wtf");
+      setTimeout(() => {
+        navigate(`/`);
+      }, 200);
     }
   }
   return (
     <div>
+      <div
+        className="fixed top-0 left-0 w-screen h-screen z-12 backdrop-blur-xs"
+        onClick={() => handleDialogueWindow(false)}
+      ></div>
       <div className="fixed z-50 bg-white top-1/2 left-1/2 p-6 drop-shadow-2xl drop-shadow-black rounded-2xl -translate-x-1/2 -translate-y-1/2 w-1/3">
         <div className="text-2xl mb-6">How did you like the recipe?</div>
         <div className="min-h-10" onMouseLeave={() => handleTempRating(rating)}>
@@ -77,7 +86,7 @@ export default function ReviewDialogue({
             Skip
           </p>
           <p
-            className="px-4 py-1 bg-primary text-white cursor-pointer text-xl"
+            className={`${!rating ? "cursor-not-allowed" : "cursor-pointer "} px-4 py-1 bg-primary text-white text-xl`}
             onClick={handleSubmit}
           >
             Submit
