@@ -78,15 +78,15 @@ export default function ReviewDialogue({
             />
           </label>
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end items-center">
           <p
-            className="border px-4 py-1 cursor-pointer text-xl mr-10"
+            className="border px-4 py-1 cursor-pointer text-xl mr-5 rounded-xl"
             onClick={() => handleDialogueWindow(false)}
           >
             Skip
           </p>
           <p
-            className={`${!rating ? "cursor-not-allowed" : "cursor-pointer "} px-4 py-1 bg-primary text-white text-xl`}
+            className={`${!rating ? "cursor-not-allowed bg-gray-400" : "cursor-pointer bg-primary"} px-4 py-1 text-white text-xl rounded-xl border border-primary`}
             onClick={handleSubmit}
           >
             Submit
