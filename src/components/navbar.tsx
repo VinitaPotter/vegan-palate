@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo_yellow_bg.png";
 export default function Navbar() {
   return (
-    <div className="flex  justify-between bg-accent w-full h-16 border-b border-b-gray-200">
+    <div className="flex  items-center justify-between bg-accent w-full h-16">
       <p className="w-1/5 cursor-pointer">
         <NavLink to={`/`}>
           <img
@@ -14,36 +14,30 @@ export default function Navbar() {
           />
         </NavLink>
       </p>
-      <div className="flex justify-around w-1/3 p-4">
+      <div className="flex items-center justify-around w-1/3 nav-link-class h-full pt-5 ">
         <NavLink
           to={"/favorites"}
           className={({ isActive }) =>
-            isActive
-              ? "bg-white  rounded-t-2xl pb-8 pt-4 px-6"
-              : "cursor-pointer pb-8 pt-4 px-6"
+            `${isActive ? "bg-white rounded-t-2xl" : ""} min-w-40 items-center mx-5`
           }
         >
-          <p>My recipes</p>
+          <div className="text-center mt-2">My recipes</div>
         </NavLink>
         <NavLink
           to={"/resources"}
           className={({ isActive }) =>
-            isActive
-              ? "bg-white  rounded-t-2xl pb-8 pt-4 px-6"
-              : "cursor-pointer pb-8 pt-4 px-6"
+            `${isActive ? "bg-white rounded-t-2xl" : ""} min-w-40 items-center mx-5`
           }
         >
-          <p>Helpful resources</p>
+          <div className="text-center mt-2">Helpful resources</div>
         </NavLink>
         <NavLink
           to={"/events"}
           className={({ isActive }) =>
-            isActive
-              ? "bg-white  rounded-t-2xl pb-8 pt-4 px-6"
-              : "cursor-pointer pb-8 pt-4 px-6"
+            `${isActive ? "bg-white rounded-t-2xl" : ""} min-w-40 items-center mx-5`
           }
         >
-          <p>Events</p>
+          <div className="text-center mt-2">Events</div>
         </NavLink>
       </div>
       <div className="p-4">

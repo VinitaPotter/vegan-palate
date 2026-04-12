@@ -31,7 +31,7 @@ export default function SearchPage() {
   }, [query]);
 
   return (
-    <div className="max-w-100vw overflow-hidden">
+    <div className="max-w-100vw">
       <div className="text-center mt-10">
         <Search query={query} onSearch={handleQueryChange} />
       </div>
@@ -59,7 +59,7 @@ export default function SearchPage() {
                 key={recipe.id}
                 index={index}
                 meal={recipe}
-                rotate={false}
+                page="search"
               />
             );
           })}

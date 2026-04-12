@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="px-10 my-16 flex justify-between">
+      <div className="px-10 mt-16 flex justify-between">
         <h1 className="text-5xl text-secondary heading-font font-bold">
           Best trending now..
         </h1>
@@ -29,6 +29,7 @@ export default function Home() {
                 index={index}
                 meal={t}
                 rotate={true}
+                page="trending"
               />
             ),
           )}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useFavoriteRecipes } from "../store/recipeSelector";
@@ -41,7 +41,7 @@ export default function Favorites() {
 
   return (
     <div>
-      <div className="flex w-screen max-h-[92vh] overflow-hidden">
+      <div className="flex ">
         <div className="min-w-[2/5] pl-10 py-10 border-r border-gray-200 bg-accent relative z-0">
           <p className="text-6xl playful-font mb-20 -rotate-2">
             Make <span className="text-primary">'em</span> again!
@@ -72,17 +72,14 @@ export default function Favorites() {
           })}
         </div>
         {/* recipes */}
-        <div
-          className="flex flex-wrap overflow-scroll w-full"
-          style={{ height: `calc(100vh - 4rem)` }}
-        >
+        <div className="flex flex-wrap justify-between w-full">
           {!loading && myFilteredRecipes && myFilteredRecipes.length ? (
             myFilteredRecipes.map((t, index) => (
               <RecipeCard
                 key={index + 1}
                 index={index}
                 meal={t}
-                rotate={false}
+                page="favorites"
               />
             ))
           ) : !loading && !myFilteredRecipes.length ? (

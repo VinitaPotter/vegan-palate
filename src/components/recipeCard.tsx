@@ -18,13 +18,13 @@ type MealCard = Pick<
 type recipeCardProps = {
   meal: MealCard;
   index: number;
-  rotate: boolean;
+  page: string;
 };
 
 export default function RecipeCard({
   meal,
   index,
-  rotate = false,
+  page = "",
 }: recipeCardProps) {
   const [cardVisible, setCardVisible] = useState<boolean>(false);
 
@@ -37,18 +37,18 @@ export default function RecipeCard({
     return setCardVisible((prev) => !prev);
   }
 
-  function handleUnfavorite(event: Event) {
+  function handleUnfavorite(event: Event): void {
     event.stopPropagation();
     toggleFavorite(meal.id);
   }
 
   return (
-    <div>
+    <>
       <div
         onClick={handleCardVisibility}
-        className={`bg-white group relative border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${rotate ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow" : "m-6 h-112.5 border"}`}
+        className={`bg-white group relative border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${page === "trending" ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow " : "m-6 h-auto border"} `}
         style={
-          rotate
+          page === "trending"
             ? {
                 transform: `rotate(${(index - 3 / 2) * 17}deg) translateY(${[0, 3].includes(index) ? 100 : -20}px)`,
               }
@@ -58,7 +58,7 @@ export default function RecipeCard({
         {meal ? (
           <div>
             <div className="h-10 ">
-              {rotate ? (
+              {page === "trending" ? (
                 <p className="text-md mt-2">
                   <span className="text-[1px] group-hover:text-5xl transition-all duration-500 text-3xl rotate-12 inline-block absolute -top-2.5 -right-2.5">
                     🫶🏼
@@ -75,7 +75,7 @@ export default function RecipeCard({
             </div>
             <div className="text-xl mb-4 h-12 flex">
               <span>{meal.title}</span>
-              {isFav ? (
+              {page === "favorites" && isFav ? (
                 <div className="group/tooltip" onClick={handleUnfavorite}>
                   <span className="absolute top-0 right-0 p-2 group-hover/tooltip:invisible">
                     ♥️
@@ -114,6 +114,6 @@ export default function RecipeCard({
       ) : (
         <div></div>
       )}
-    </div>
+    </>
   );
 }
