@@ -14,7 +14,7 @@ export default function Navbar() {
           />
         </NavLink>
       </p>
-      <div className="flex items-center justify-around w-1/3 nav-link-class h-full pt-5 ">
+      <div className="flex items-center justify-around w-1/3 nav-link-class h-full pt-3 ">
         <NavLink
           to={"/favorites"}
           className={({ isActive }) =>
