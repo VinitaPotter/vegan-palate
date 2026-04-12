@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Search from "../components/search";
-import { useSearchParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import ALL_RECIPES from "../data/recipes.json";
 import RecipeCard from "../components/recipeCard";
 

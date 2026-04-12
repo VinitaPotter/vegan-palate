@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import ALL_RECIPES from "../data/recipes.json";
 
 import confetti from "canvas-confetti";
