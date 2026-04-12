@@ -1,19 +1,19 @@
 export default function Explore() {
   return (
-    <div className="m-10 overflow-hidden">
+    <div className="m-10">
       <div className=" mb-5">
         <div className="heading-font text-4xl text-primary mb-5">
           What's got everyone talking..
         </div>
-        <div className="flex  flex-shrink-0 justify-between flex-nowrap gap-4 size-fit overflow-auto">
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
-          <div className="bg-gray-200 h-90 w-100 border rounded-2xl"></div>
+        <div className="flex shrink-0 flex-nowrap gap-4 overflow-x-auto no-scrollbar">
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
+          <div className="bg-gray-200 h-90 min-w-[400px] w-[400px] border rounded-2xl"></div>
         </div>
       </div>
       <div className=" mb-5">
