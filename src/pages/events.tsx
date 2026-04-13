@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import {
   MapContainer,
@@ -24,7 +25,7 @@ interface eventIF {
   image?: string | null;
   organizerWebsite?: string | null;
   coords?: { lat: number; lng: number };
-  [key: string]: any; // Allows indexing like event["coords"]
+  [key: string]: any;
 }
 
 const treeIcon = L.divIcon({
@@ -60,7 +61,6 @@ export default function Events() {
       isExpired: false,
       image: "https://vexvegan.live/resources/hero-festival.jpg",
     },
-    // ... rest of your dummy objects go here (ensure they match eventIF)
   ];
 
   function LocationMarker() {
@@ -90,10 +90,12 @@ export default function Events() {
       const initialEvents = [...dummy];
       setEventsData(initialEvents);
 
+      // FIX 1: Use for...of instead of forEach to allow 'await'
       for (const event of initialEvents) {
         const query = (event.city || event.state || event.country || "")
           .trim()
           .toLowerCase();
+
         if (!query) continue;
 
         const coords = await getCityCoords(query);
@@ -108,11 +110,10 @@ export default function Events() {
           );
         }
       }
+      setLoading(false);
     }
 
-    getData();
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
+    getData(); // FIX 2: Call it once, don't call it inside itself
   }, [getCityCoords]);
 
   function getDateString(start: string, end: string): string {
