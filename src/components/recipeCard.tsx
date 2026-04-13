@@ -46,7 +46,7 @@ export default function RecipeCard({
     <>
       <div
         onClick={handleCardVisibility}
-        className={`bg-white group relative border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${page === "trending" ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow " : "m-6  h-112.5 border"} ${page === "search" ? "hover:scale-105 transition-all duration-300" : ""}`}
+        className={`bg-white group relative border-gray-200 w-78 rounded-xl px-4 py-2 cursor-pointer ${page === "trending" ? "hover:scale-105 hover:border-secondary border-2 h-3/4 duration-500 relative hover:z-20 card-shadow " : "m-6  h-112.5 border"} ${page === "search" ? "hover:scale-105 transition-all duration-300" : ""} ${page === "explore" ? "hover:scale-105 transition-all duration-300 min-w-78!   drop-shadow-md hover:drop-shadow-tertiary drop-shadow-accent mx-0!" : ""}`}
         style={
           page === "trending"
             ? {
