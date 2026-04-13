@@ -48,7 +48,6 @@ export default function RatingSystem({ userRating }: RatingProps) {
       )();
 
       const playVowel = (freq1: number, freq2: number) => {
-        // Create two oscillators to represent vocal formants
         const osc1 = context.createOscillator();
         const osc2 = context.createOscillator();
         const gain = context.createGain();
@@ -56,11 +55,9 @@ export default function RatingSystem({ userRating }: RatingProps) {
         osc1.type = "sine";
         osc2.type = "sine";
 
-        // "Oh" starts here
         osc1.frequency.setValueAtTime(freq1, context.currentTime);
         osc2.frequency.setValueAtTime(freq2, context.currentTime);
 
-        // "No" drops the pitch (the disappointment slide)
         osc1.frequency.exponentialRampToValueAtTime(
           freq1 * 0.7,
           context.currentTime + 0.5,
@@ -83,15 +80,11 @@ export default function RatingSystem({ userRating }: RatingProps) {
         osc2.stop(context.currentTime + 0.5);
       };
 
-      // 450Hz and 800Hz are common "O" vowel formants
       playVowel(450, 800);
     } else if (score >= 2 && score <= 4) {
-      // 🤨 😋 😍 "The Progression": Getting snappier and higher
-      // Score 2 = 400Hz, Score 3 = 600Hz, Score 4 = 800Hz
       const pitch = 200 + score * 200;
       playNote(pitch, "sine", 0.1, 0.3);
     } else if (score === 5) {
-      // 💎 "The Jackpot": The Arpeggio
       const notes = [523.25, 659.25, 783.99, 1046.5];
       notes.forEach((freq, i) => {
         setTimeout(() => playNote(freq, "triangle", 0.3, 0.2), i * 80);
