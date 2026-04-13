@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecipeStore } from "../store/recipesStore";
 type ReviewProps = {
@@ -16,6 +16,7 @@ export default function ReviewDialogue({
 
   const [tempRating, setTempRating] = useState<number>(0);
   const [rating, setRating] = useState<number>(0);
+  const [isRated, setIsRated] = useState<boolean>(true);
   const [addToFav, setaddToFav] = useState<boolean>(false);
 
   function handleTempRating(value: number): void {
@@ -23,11 +24,12 @@ export default function ReviewDialogue({
   }
   function giveRating(value: number): void {
     setRating(value);
+    setIsRated(true);
   }
 
   function handleSubmit(): void {
     if (!rating) {
-      alert("Please add your rating!");
+      setIsRated(false);
       return;
     } else if (addToFav) {
       toggleFavorites(recipeId);
@@ -40,6 +42,7 @@ export default function ReviewDialogue({
       }, 200);
     }
   }
+
   return (
     <div>
       <div
@@ -65,17 +68,28 @@ export default function ReviewDialogue({
             );
           })}
         </div>
-        <textarea className="border w-full min-h-30"></textarea>
-        <div>
-          <label>
-            <span className="text-lg">😋 Add to my favorites:</span>{" "}
+        {!isRated ? (
+          <span className="text-sm text-red-600">
+            Please add rating before submitting
+          </span>
+        ) : (
+          <></>
+        )}
+        <textarea className="border w-full min-h-30 text-2xl p-2"></textarea>
+        <div className="py-5 ">
+          <label className="checkbox">
+            <p className="text-lg flex items-center ">
+              <span className="text-2xl mr-2 ">😋</span> Add to my favorites:
+            </p>
             <input
               type="checkbox"
-              name="myCheckbox"
+              name="fav"
               className=" h-4 w-4 cursor-pointer"
               onChange={() => setaddToFav((prev) => !prev)}
               defaultChecked={favoriteIds.includes(recipeId)}
             />
+            <div className="checkbox__checkmark"></div>
+            <div className="checkbox__body"></div>
           </label>
         </div>
         <div className="flex justify-end items-center">

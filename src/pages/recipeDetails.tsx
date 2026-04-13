@@ -74,6 +74,29 @@ export default function RecipeDetails() {
     }
     return foodEmojis[userName.length];
   }
+
+  function normalizeAmount(amount: number | null): string {
+    const lookup = [
+      { val: 0.75, label: "¾" },
+      { val: 0.66, label: "¾" },
+      { val: 0.5, label: "½ a" },
+      { val: 0.33, label: "⅓" },
+      { val: 0.25, label: "¼" },
+      { val: 0.2, label: "¾" },
+      { val: 1.5, label: "1 ½" },
+    ];
+    if (!amount) {
+      return "";
+    } else if (Number(amount % 1 === 0)) {
+      return `${amount}`;
+    } else {
+      return `${
+        lookup.find((item) => Math.abs(item.val - amount) < 0.02)?.label ||
+        amount
+      }`;
+    }
+  }
+
   useEffect(() => {
     function getDetails() {
       let currentRecipe;
@@ -162,7 +185,8 @@ export default function RecipeDetails() {
                           <li className="mb-1" key={ing.id}>
                             <span className="mr-2 text-2xl">{ing.emoji}</span>
                             <span className="mr-1 ">
-                              {ing?.amount || ""} {ing?.unit || ""} {ing?.name}
+                              {normalizeAmount(ing.amount)} {ing?.unit || ""}{" "}
+                              {ing?.name}
                             </span>
                             <span></span>
                             <span className=" text-gray-700 ">
