@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecipeStore } from "../store/recipesStore";
+import RatingSystem from "../components/rating";
 type ReviewProps = {
   handleDialogueWindow: (val: boolean) => void;
   recipeId: number;
@@ -18,6 +19,7 @@ export default function ReviewDialogue({
   const [rating, setRating] = useState<number>(0);
   const [isRated, setIsRated] = useState<boolean>(true);
   const [addToFav, setaddToFav] = useState<boolean>(false);
+  const [showRatingSystem, setshowRatingSystem] = useState<boolean>(false);
 
   function handleTempRating(value: number): void {
     setTempRating(value);
@@ -31,15 +33,18 @@ export default function ReviewDialogue({
     if (!rating) {
       setIsRated(false);
       return;
-    } else if (addToFav) {
-      toggleFavorites(recipeId);
-      setTimeout(() => {
-        navigate(`/favorites`);
-      }, 200);
     } else {
-      setTimeout(() => {
-        navigate(`/`);
-      }, 200);
+      setshowRatingSystem(true);
+      if (addToFav) {
+        toggleFavorites(recipeId);
+        setTimeout(() => {
+          navigate(`/favorites`);
+        }, 1000);
+      } else {
+        setTimeout(() => {
+          navigate(`/`);
+        }, 1200);
+      }
     }
   }
 
@@ -49,7 +54,7 @@ export default function ReviewDialogue({
         className="fixed top-0 left-0 w-screen h-screen z-12 backdrop-blur-xs"
         onClick={() => handleDialogueWindow(false)}
       ></div>
-      <div className="fixed z-50 bg-white top-1/2 left-1/2 p-6 drop-shadow-2xl drop-shadow-black rounded-2xl -translate-x-1/2 -translate-y-1/2 w-1/3">
+      <div className="fixed z-50 bg-white top-1/2 left-1/2 p-6 drop-shadow-2xl drop-shadow-black rounded-2xl -translate-x-1/2 -translate-y-1/2 w-1/3 ">
         <div className="text-2xl mb-6">How did you like the recipe?</div>
         <div className="min-h-10" onMouseLeave={() => handleTempRating(rating)}>
           {Array.from(Array(5)).map((a, i) => {
@@ -106,6 +111,7 @@ export default function ReviewDialogue({
             Submit
           </p>
         </div>
+        {showRatingSystem ? <RatingSystem userRating={rating} /> : ""}
       </div>
     </div>
   );
