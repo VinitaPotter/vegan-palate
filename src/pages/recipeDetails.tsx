@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import ALL_RECIPES from "../data/recipes.json";
 
@@ -31,7 +31,6 @@ export default function RecipeDetails() {
   }
   const [showDialogue, setShowDialogue] = useState<boolean>(false);
   const [mealRecipe, setMealRecipe] = useState<Meal | null>(null);
-  const [topUserReview, setTopUserReview] = useState<topReview | null>(null);
   const foodEmojis = [
     "🍇",
     "🍈",
@@ -61,12 +60,9 @@ export default function RecipeDetails() {
       if (!isFav) setShowDialogue(true);
     }, 500);
   }
-  function getTopReview(): void {
-    const foundReview = mealRecipe?.reviews.find(
-      (review) => review.rating >= 4,
-    );
-    if (foundReview) setTopUserReview(foundReview);
-  }
+  const topUserReview = useMemo(() => {
+    return mealRecipe?.reviews.find((review) => review.rating >= 4) || null;
+  }, [mealRecipe]);
 
   function getUserEmoji(userName: string): string {
     if (userName && userName.length >= foodEmojis.length) {
@@ -105,14 +101,10 @@ export default function RecipeDetails() {
       } else {
         currentRecipe = ALL_RECIPES[recipeId];
       }
-      setMealRecipe(currentRecipe as Meal);
+      setMealRecipe(currentRecipe as unknown as Meal);
     }
     getDetails();
   }, [recipeId]);
-
-  useEffect(() => {
-    getTopReview();
-  }, [mealRecipe?.reviews]);
 
   return (
     <div>
