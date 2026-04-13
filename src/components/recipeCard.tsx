@@ -15,6 +15,12 @@ type MealCard = Pick<
   | "dishTypes"
   | "instructions"
   | "aggregateLikes"
+  | "cheap"
+  | "tags"
+  | "nutrition"
+  | "servings"
+  | "readyInMinutes"
+  | "extendedIngredients"
 >;
 type recipeCardProps = {
   meal: MealCard;
@@ -38,7 +44,7 @@ export default function RecipeCard({
     return setCardVisible((prev) => !prev);
   }
 
-  function handleUnfavorite(event: Event): void {
+  function handleUnfavorite(event: React.MouseEvent<HTMLDivElement>): void {
     event.stopPropagation();
     if (page === "favorites") toggleFavorite(meal.id);
   }
@@ -118,7 +124,7 @@ export default function RecipeCard({
       {cardVisible ? (
         <div>
           <RecipeOverviewModal
-            meal={meal as any}
+            meal={meal as MealCard}
             handleClickOutside={handleCardVisibility}
           />
         </div>

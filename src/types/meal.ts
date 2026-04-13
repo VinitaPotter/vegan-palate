@@ -1,7 +1,7 @@
 export type Meal = {
   id: number;
   title: string;
-  image: string;
+  image?: string | null;
   imageType: string;
 
   servings: number;
