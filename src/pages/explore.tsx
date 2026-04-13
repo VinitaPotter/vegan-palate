@@ -5,11 +5,11 @@ export default function Explore() {
   const ingredient_focus = "mushroom";
   const talkingCopy = JSON.parse(JSON.stringify(ALL_RECIPES));
   const talking = talkingCopy
-    .sort((a, b) => b.aggregateLikes - a.aggregateLikes)
+    .sort((a: any, b: any) => b.aggregateLikes - a.aggregateLikes)
     .splice(0, 10);
 
   const focusCopy = JSON.parse(JSON.stringify(ALL_RECIPES));
-  const focus = focusCopy.reduce((acc, cur) => {
+  const focus = focusCopy.reduce((acc: any, cur: any) => {
     cur.extendedIngredients.forEach((ing) => {
       if (ing.name.includes(ingredient_focus)) {
         acc.push(cur);

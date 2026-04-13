@@ -24,11 +24,6 @@ export default function RecipeDetails() {
     });
   };
 
-  interface topReview {
-    user: string;
-    rating: number;
-    testimonial: string;
-  }
   const [showDialogue, setShowDialogue] = useState<boolean>(false);
   const [mealRecipe, setMealRecipe] = useState<Meal | null>(null);
   const foodEmojis = [

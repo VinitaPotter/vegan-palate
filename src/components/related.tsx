@@ -23,7 +23,7 @@ export default function Related({ mealTypes, recipeId }: RelatedProps) {
     navigate(`/recipe/${id}`);
   }
 
-  function getRelatedMeals(relatedType: []): void {
+  function getRelatedMeals(relatedType: string[]): void {
     const tempArray: RelatedMeals = [];
 
     const currentRecipeId = ALL_RECIPES.findIndex((r) => r.id === recipeId);
@@ -32,21 +32,22 @@ export default function Related({ mealTypes, recipeId }: RelatedProps) {
 
     if (relatedType && relatedType.length) {
       otherRecipes.forEach((recipe) => {
-        if (
-          recipe?.dishTypes?.includes(relatedType[0]) &&
-          tempArray.length < 3
-        ) {
-          tempArray.push(recipe as Meal);
+        const primaryType =
+          relatedType && relatedType.length > 0 ? relatedType[0] : "";
+        if (recipe?.dishTypes?.includes(primaryType) && tempArray.length < 3) {
+          tempArray.push(recipe as unknown as Meal);
         }
       });
     } else {
-      otherRecipes.slice(0, 3).map((r) => tempArray.push(r as Meal));
+      otherRecipes.slice(0, 3).map((r) => tempArray.push(r as unknown as Meal));
     }
     setRelatedItems(tempArray);
   }
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     getRelatedMeals(mealTypes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recipeId]);
 
   return (

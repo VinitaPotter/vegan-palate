@@ -28,7 +28,6 @@ export default function Home() {
                 key={index + 1}
                 index={index}
                 meal={t}
-                rotate={true}
                 page="trending"
               />
             ),
