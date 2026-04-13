@@ -1,28 +1,47 @@
+import { useState, useEffect } from "react";
+
 type searchProps = {
   query: string;
   onSearch: (value: string) => void;
 };
 
 export default function Search({ query = "", onSearch }: searchProps) {
-  function handleEneter(e) {
+  const [searchTerm, setSearchTerm] = useState(query);
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      if (searchTerm !== query) {
+        onSearch(searchTerm.replace(/ /g, ""));
+      }
+    }, 500);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchTerm, onSearch, query]);
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === "Enter") {
-      const queryVal = e.target.value.replace(/ /g, "");
-      onSearch(queryVal);
+      onSearch(searchTerm.replace(/ /g, ""));
     }
   }
+
   return (
     <div>
-      <div>
+      <div className="relative w-1/2 mx-auto">
         <input
-          onKeyDown={(e) => handleEneter(e)}
-          defaultValue={query}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyDown}
+          value={searchTerm}
           type="text"
           name="search"
           id="search"
-          className="p-5 border border-gray-200 rounded-2xl w-1/2"
+          className="p-5 pr-12 border border-gray-200 rounded-2xl w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder={"Find your next favorite recipe..."}
           autoFocus
+          autoComplete="off"
         />
+        <span className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
+          🔍
+        </span>
       </div>
     </div>
   );

@@ -21,9 +21,9 @@ export default function SearchPage() {
 
   const searchedRecipes = query
     ? [...ALL_RECIPES].filter((r) =>
-        (r.title.trim() + r.dishTypes.toString())
+        (r.title.replace(/ /g, "") + r.dishTypes.toString().replace(/ /g, ""))
           .toLocaleLowerCase()
-          .includes(query.trim().toLocaleLowerCase()),
+          .includes(query.replace(/ /g, "").toLocaleLowerCase()),
       )
     : [];
 

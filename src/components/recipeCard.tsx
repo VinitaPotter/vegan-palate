@@ -68,9 +68,13 @@ export default function RecipeCard({
                   </span>
                 </p>
               ) : (
-                <span className="border px-1 rounded text-xs">
-                  {meal.dishTypes[0]}
-                </span>
+                meal.dishTypes.map((dt) => {
+                  return (
+                    <span className="border px-1 rounded text-xs mr-1">
+                      {dt}
+                    </span>
+                  );
+                })
               )}
             </div>
             <div className="text-xl mb-4 h-12 flex">

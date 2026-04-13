@@ -56,7 +56,7 @@ export default function Favorites() {
           "breakfast",
           "appetizer",
           "main course",
-          "snacks",
+          "snack",
           "dessert",
         ].map((item, index) => {
           return (
