@@ -1512,5 +1512,111 @@
     ],
     "createdAt": "2026-04-13T09:44:00Z",
     "updatedAt": "2026-04-13T09:44:00Z"
+  },
+  {
+    "id": 516,
+    "title": "Vegan Spinach Artichoke Dip",
+    "image": "https://www.karissasvegankitchen.com/wp-content/uploads/2021/08/vegan-spinach-artichoke-dip-5c.jpg",
+    "servings": 10,
+    "readyInMinutes": 40,
+    "preparationMinutes": 10,
+    "glutenFree": true,
+    "veryHealthy": false,
+    "cheap": false,
+    "dishTypes": ["appetizer", "snack"],
+    "cookingMinutes": 30,
+    "aggregateLikes": 93,
+    "sourceName": "Karissa's Vegan Kitchen",
+    "sourceUrl": "https://www.karissasvegankitchen.com/vegan-spinach-artichoke-dip/",
+    "weightPerServing": { "amount": 85, "unit": "g" },
+    "tags": ["nut-free", "game-day", "creamy", "party-food"],
+    "summary": "A creamy, tangy, and garlicky plant-based appetizer that is perfect for entertaining. This version is nut-free and uses vegan cream cheese for a classic texture.",
+    "extendedIngredients": [
+      {
+        "id": 1,
+        "name": "oil",
+        "emoji": "🛢️",
+        "amount": 1,
+        "unit": "tsp",
+        "preparation": ""
+      },
+      {
+        "id": 2,
+        "name": "garlic",
+        "emoji": "🧄",
+        "amount": 3,
+        "unit": "cloves",
+        "preparation": "chopped"
+      },
+      {
+        "id": 3,
+        "name": "fresh baby spinach",
+        "emoji": "🥬",
+        "amount": 10,
+        "unit": "oz",
+        "preparation": ""
+      },
+      {
+        "id": 4,
+        "name": "vegan cream cheese",
+        "emoji": "🥛",
+        "amount": 16,
+        "unit": "oz",
+        "preparation": "room temperature"
+      },
+      {
+        "id": 5,
+        "name": "vegan mayo",
+        "emoji": "🥚",
+        "amount": 0.33,
+        "unit": "cup",
+        "preparation": ""
+      },
+      {
+        "id": 6,
+        "name": "artichoke hearts",
+        "emoji": "🥗",
+        "amount": 14,
+        "unit": "oz",
+        "preparation": "drained and chopped"
+      },
+      {
+        "id": 7,
+        "name": "nutritional yeast",
+        "emoji": "🧀",
+        "amount": 0.25,
+        "unit": "cup",
+        "preparation": "or vegan parmesan"
+      }
+    ],
+    "instructions": "Saute garlic and spinach until wilted. Mix with cream cheese, mayo, artichokes, and seasonings in a baking dish. Bake at 400°F (200°C) for 15-20 minutes.",
+    "analyzedInstructions": [
+      {
+        "number": 1,
+        "step": "Preheat oven to 400°F (200°C)."
+      },
+      {
+        "number": 2,
+        "step": "Heat oil in a large pan on medium heat. Saute garlic until browned (about 2 minutes), then add spinach and saute until wilted. Remove from heat."
+      },
+      {
+        "number": 3,
+        "step": "In a baking dish, mix together the vegan cream cheese, mayo, artichoke hearts, nutritional yeast, sautéed spinach, salt, and pepper."
+      },
+      {
+        "number": 4,
+        "step": "Bake for 15-20 minutes, or until the dip is hot and bubbling. Serve warm."
+      }
+    ],
+    "nutrition": {
+      "calories": 195,
+      "protein": 4,
+      "carbs": 7,
+      "fat": 19,
+      "fiber": 4
+    },
+    "reviews": [],
+    "createdAt": "2026-04-13T13:40:00Z",
+    "updatedAt": "2026-04-13T13:40:00Z"
   }
 ]
