@@ -32,9 +32,14 @@ export default function Related({ mealTypes, recipeId }: RelatedProps) {
 
     if (relatedType && relatedType.length) {
       otherRecipes.forEach((recipe) => {
-        const primaryType =
-          relatedType && relatedType.length > 0 ? relatedType[0] : "";
-        if (recipe?.dishTypes?.includes(primaryType) && tempArray.length < 3) {
+        const types = relatedType as string[];
+        const primaryType = types.length > 0 ? types[0] : "";
+
+        if (
+          primaryType &&
+          recipe?.dishTypes?.includes(primaryType) &&
+          tempArray.length < 3
+        ) {
           tempArray.push(recipe as unknown as Meal);
         }
       });

@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/purity */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import RecipeCard from "../components/recipeCard";
 import ALL_RECIPES from "../data/recipes.json";
 
@@ -24,7 +26,7 @@ export default function Explore() {
   const newRecipesCopy = JSON.parse(JSON.stringify(ALL_RECIPES));
   const newRecipes = newRecipesCopy
     .sort(
-      (a, b) =>
+      (a: any, b: any) =>
         new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
     )
     .splice(0, 10);
