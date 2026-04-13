@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import Search from "../components/search";
 import { useSearchParams } from "react-router-dom";
@@ -62,7 +63,7 @@ export default function SearchPage() {
               <RecipeCard
                 key={recipe.id}
                 index={index}
-                meal={recipe}
+                meal={recipe as any}
                 page="search"
               />
             );

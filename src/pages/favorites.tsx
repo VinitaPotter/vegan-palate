@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useFavoriteRecipes } from "../store/recipeSelector";
-import type { Meal } from "../types/meal";
 
 import RecipeCard from "../components/recipeCard";
 import Search from "../components/search";
@@ -21,7 +20,7 @@ export default function Favorites() {
   const myFilteredRecipes =
     activeFilter.name === "all"
       ? myFavRecipes
-      : myFavRecipes.filter((r) => r.dishTypes?.includes(activeFilter.name));
+      : myFavRecipes.filter((r) => r?.dishTypes?.includes(activeFilter.name));
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState<boolean>(false);

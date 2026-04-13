@@ -271,19 +271,6 @@ const resourceData = [
   },
 ];
 export default function Resources() {
-  interface resourceType {
-    uid: string;
-    name: string;
-    description: string;
-    source: string;
-    image: string;
-    quotes: {
-      sentence: string;
-      citation: string;
-      source: string;
-    };
-    type: string;
-  }
   return (
     <div className="columns-4 p-5 relative bg-linear-to-t from-accent from-70 via-tertiary  via-30 to-white to-0">
       {resourceData.map((rd) => {

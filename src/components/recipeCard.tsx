@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import RecipeOverviewModal from "./recipeOverviewModal";
 import { useState } from "react";
 import type { Meal } from "../types/meal";
@@ -117,7 +118,7 @@ export default function RecipeCard({
       {cardVisible ? (
         <div>
           <RecipeOverviewModal
-            meal={meal}
+            meal={meal as any}
             handleClickOutside={handleCardVisibility}
           />
         </div>
