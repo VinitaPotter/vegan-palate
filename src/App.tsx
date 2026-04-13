@@ -12,10 +12,26 @@ import Events from "./pages/events";
 import Explore from "./pages/explore";
 
 const Layout = () => (
-  <>
-    <Navbar />
-    <Outlet />
-  </>
+  <div className="min-h-screen">
+    <div className="flex lg:hidden  h-screen w-full flex-col items-center justify-center p-10 text-center bg-linear-to-b from-accent to-white">
+      <div className="text-6xl mb-6">🍽️ </div>
+      <h1 className="heading-font text-4xl text-primary mb-4">
+        Please wait to be served
+      </h1>
+      <p className="text-lg text-gray-600 ">
+        We are currently perfecting our mise en place
+      </p>
+      <p className="mt-4 font-bold text-primary">
+        Please visit us on a desktop or laptop!
+      </p>
+      <div className="mt-8 text-2xl animate-bounce">🌱</div>
+    </div>
+
+    <div className="hidden lg:block">
+      <Navbar />
+      <Outlet />
+    </div>
+  </div>
 );
 
 const router = createBrowserRouter(
