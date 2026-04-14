@@ -38,7 +38,7 @@ export default function RecipeOverviewModal({
         onClick={() => handleClickOutside()}
       >
         <div
-          className="ticket-mask shadow-md w-1/3 ml-auto mr-auto mt-20 rounded-xl bg-cover bg-center bg-fixed "
+          className="max-h-[85vh] overflow-auto ticket-mask shadow-md w-1/3 ml-auto mr-auto mt-20 rounded-xl bg-cover bg-center bg-fixed "
           style={{
             backgroundImage: `linear-gradient(to top, #fff, #fff, transparent), url(${meal.image || PlaceHolder})`,
           }}
